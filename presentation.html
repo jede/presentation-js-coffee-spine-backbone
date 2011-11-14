@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Javascript for Programmers</title>
+
+    <meta name="description" content="Javascript for Programmers">
+    <meta name="author" content="Ilia Mikhailov">
+    <meta name="viewport" content="width=1024, user-scalable=no">
+
+    <!-- Core and extension CSS files -->
+    <link rel="stylesheet" href="deck.js/core/deck.core.css">
+    <link rel="stylesheet" href="deck.js/extensions/goto/deck.goto.css">
+    <link rel="stylesheet" href="deck.js/extensions/menu/deck.menu.css">
+    <link rel="stylesheet" href="deck.js/extensions/navigation/deck.navigation.css">
+    <link rel="stylesheet" href="deck.js/extensions/status/deck.status.css">
+    <link rel="stylesheet" href="deck.js/extensions/hash/deck.hash.css">
+
+    <link rel="stylesheet" id="style-theme-link" href="deck.js/themes/style/neon.css">
+    <link rel="stylesheet" id="transition-theme-link" href="deck.js/themes/transition/fade.css">
+
+    <link rel="stylesheet" href="deck.js/extensions/codemirror/deck.codemirror.css">
+    <link rel="stylesheet" href="deck.js/extensions/codemirror/themes/elegant.css">
+    <link rel="stylesheet" href="deck.js/extensions/codemirror/themes/default.css">
+    <link rel="stylesheet" href="deck.js/extensions/codemirror/themes/neat.css">
+
+    <link rel="stylesheet" href="presentation.css">
+
+    <script src="deck.js/modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container">
+
+<section class="slide" id="title-slide">
+    <h1>Javascript for programmers</h1>
+</section>
+
+<section class="slide" id="how-to-overview">
+    <h2>How to Make a Deck</h2>
+    <ol>
+        <li>
+            <h3>Write Slides</h3>
+            <p>Slide content is simple&nbsp;HTML.</p>
+        </li>
+        <li>
+            <h3>Choose Themes</h3>
+            <p>One for slide styles and one for deck&nbsp;transitions.</p>
+        </li>
+        <li>
+            <h3>Include Extensions</h3>
+            <p>Add extra functionality to your deck, or leave it stripped&nbsp;down.</p>
+        </li>
+    </ol>
+</section>
+
+<section class="slide" id="javascript-example">
+  <h2>Runnable JS</h2>
+  <textarea id="code4" name="code" class="code" mode="javascript" theme="elegant" style="display: none;" runnable="true" globals="$">
+    // output my log
+    console.log($('script').size());
+  </textarea>
+</section>
+
+<section class="slide" id="coffee-example">
+  <h2>Coffeescript Example</h2>
+  <textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
+    a = ->
+      return "I like coffee"
+    console.log a()
+  </textarea>
+</section>
+
+<p class="deck-status">
+    <span class="deck-status-current"></span>
+    /
+    <span class="deck-status-total"></span>
+</p>
+
+<form action="." method="get" class="goto-form">
+    <label for="goto-slide">Go to slide:</label>
+    <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+    <datalist id="goto-datalist"></datalist>
+    <input type="submit" value="Go">
+</form>
+
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+  <!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../jquery-1.7.min.js"><\/script>')</script>
+
+<!-- Deck Core and extensions -->
+<script src="deck.js/core/deck.core.js"></script>
+<script src="deck.js/extensions/hash/deck.hash.js"></script>
+<script src="deck.js/extensions/menu/deck.menu.js"></script>
+<script src="deck.js/extensions/goto/deck.goto.js"></script>
+<script src="deck.js/extensions/status/deck.status.js"></script>
+
+<script src="deck.js/extensions/codemirror/codemirror.js"></script>
+<script src="deck.js/extensions/codemirror/mode/javascript/javascript.js"></script>
+<script src="deck.js/extensions/codemirror/mode/coffeescript/coffeescript.js"></script>
+<!-- required for html highlighting -->
+
+<script src="deck.js/extensions/codemirror/mode/xml/xml.js"></script>
+<script src="deck.js/extensions/codemirror/mode/css/css.js"></script>
+<script src="deck.js/extensions/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+<script src="deck.js/extensions/codemirror/deck.codemirror.js"></script>
+
+<script src="coffee-script.js"></script>
+<script src="presentation.js"></script>
+
+<!-- Specific to this page -->
+
+</body>
+</html>
+
