@@ -354,16 +354,176 @@ console.log(typeof abc);
   </textarea>
 </section>
 
+<section class="slide" id="javascript-wow-example-5">
+<h2>The right way...</h2>
+    <textarea id="code4" name="code" class="code" mode="javascript"  theme="elegant" style="display: none;" runnable="true" globals="$">
+var abc = function(){  
+  xyz(); //undefined!  
 
+  var xyz = function() {   
+    xyz(); //works 
+  }
+      
+  xyz(); //works 
+}  
 
-<section class="slide" id="coffee-example">
-  <h2>Coffeescript Example</h2>
-  <textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
-a = ->
-  return "Like a boss!"
-console.log a()
+xyz() //undefined!
   </textarea>
 </section>
+
+
+
+<section class="slide" id="coffee-example-1">
+  <h2>Hello Coffeescript!</h2>
+  <!-- Visa:
+      sum = ->
+      sum = (a, b) ->
+      sum = (a, b) -> a + b
+  -->
+
+  <textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
+->
+  </textarea>
+</section>
+
+<section class="slide" id="coffee-example-2">
+<br/><br/>
+  <textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
+fill = (container, liquid = "coffee") ->
+  "Filling the #{container} with #{liquid}..."
+  </textarea>
+</section>
+
+<section class="slide" id="coffee-example-3">
+<br/><br/>
+  <textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
+colors =
+  red: 0xF00
+  blue: 0x00F
+  </textarea>
+</section>
+
+<section class="slide" id="coffee-example-4">
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
+class Monkey
+  constructor: (name) ->
+    @name = name
+  </textarea>
+</section>
+
+<section class="slide" id="coffee-example-5">
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
+theBait   = 1000
+theSwitch = 0
+
+[theBait, theSwitch] = [theSwitch, theBait]
+</textarea>
+</section>
+
+<section class="slide" id="coffee-example-6">
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
+tag = "[impossible]"
+
+[open, contents..., close] = tag.split("")
+</textarea>
+</section>
+
+<section class="slide" id="coffee-example-7">
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
+cholesterol = 127
+
+healthy = 200 > cholesterol > 60
+</textarea>
+</section>
+
+<section class="slide" id="coffee-example-8">
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
+list = [1, 2, 3, 4, 5]
+
+cubes = (math.cube num for num in list)
+</textarea>
+</section>
+
+<section class="slide" id="backbone">
+    <img src="media/backbone.png" style="margin-top: 30%;" alt="" />
+</section>
+
+<section class="slide" id="jagskabara-1">
+<h1>Jag ska bara...</h1>
+</section>
+
+<section class="slide" id="jagskabara-2">
+    <h1>Jag ska bara...</h1>    
+    <img src="media/jagskabara2.png" style="position: absolute; left: 70%; top: 20%;" alt="" />
+</section>
+
+<section class="slide" id="jagskabara-3">
+    <h1>Jag ska bara...</h1>    
+    <img src="media/jagskabara1.png" style="position: absolute; left: 10%; top: 10%;" alt="" />
+    <img src="media/jagskabara2.png" style="position: absolute; left: 70%; top: 20%;" alt="" />
+</section>
+
+<section class="slide" id="jagskabara-4">
+    <h1>Jag ska bara...</h1>    
+    <img src="media/jagskabara1.png" style="position: absolute; left: 10%; top: 10%;" alt="" />
+    <img src="media/jagskabara2.png" style="position: absolute; left: 70%; top: 20%;" alt="" />
+    <img src="media/jagskabara3.png" style="position: absolute; left: 30%; top: 50%;" alt="" />
+</section>
+
+<section class="slide" id="backbone-mvc-1">
+  <h1>MVC</h1>
+</section>
+
+<section class="slide" id="backbone-mvc-2">
+  <h1>MVC</h1>
+  <h3 style="position: absolute; left: 25%; top: 30%;">Backbone.Model</h3>
+  <h3 style="position: absolute; left: 16%; top: 36%;">Backbone.Collection</h3>
+  <h3 style="position: absolute; left: 67%; top: 46%;">Backbone.Router</h3>
+  <h3 style="position: absolute; left: 43%; top: 66%;">Backbone.View</h3>
+</section>
+
+
+<section class="slide" id="backbone-example-1">
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="false">
+Note = Backbone.Model.extend
+  initialize: ->
+</textarea>
+</section>
+
+<section class="slide" id="backbone-example-1">
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="false">
+ItemView = Backbone.View.extend
+  tagName:  "li"
+  template: _("#<%= no %> <%= name %>").template()
+
+  render: ->
+    content = @template({no: 1, name: "yarr"})
+    $(@el).html content
+    this
+</textarea>
+</section>
+
+
+<section class="slide" id="backbone-example-2">
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="false">
+AlertView = Backbone.View.extend
+  events: "click .button": "showAlert"
+
+  showAlert: -> alert "hello"
+</textarea>
+</section>
+
+
+
+
 
 
 <!-- _Backbone.js ============================================== -->
