@@ -129,9 +129,9 @@
                   "class" : opts.classes.codemirrorresult
               }).appendTo($(wrapper).parent()),
               clear = $('<div>', {
-                "class" : "button",
+                "class" : "button clear",
                 text : "clear"
-              }).prependTo(output),
+              }).prependTo(wrapper),
               isCoffee = codeblock.attr("mode").toUpperCase() === "COFFEESCRIPT";
 
               if (isCoffee) {
@@ -139,15 +139,15 @@
                   "class" : "button compile",
                   text : "compile"
                 }).prependTo(wrapper);
-                compile.click(function(editor, output) {
-                  return function(event) {
-                    alert("Not yet, son! Not yet.");
-                  }(editor, output);
+
+                compile.click(function() {
+                  var out = $(output);
+                  output.html('<pre>' + CoffeeScript.compile(editor.getValue()) + '</pre>');
                 });
               }
 
           clear.click(function(event) {
-            $(this).parent().html('');
+            $(output).html('');
             event.preventDefault();
           });
 

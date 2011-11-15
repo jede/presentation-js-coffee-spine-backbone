@@ -7,10 +7,16 @@
   background: #fff;
   color: #222;
 }
+.deck-container .slide .CodeMirror .button.clear {
+  margin-right: 50px;
+}
 .deck-container .slide .CodeMirror .button.compile {
-  margin-right: 45px;
+  margin-right: 103px;
 }
 
 ul { list-style: none; }
 ul.nice > li:before { content: "» "; }
+.deck-codemirror-result pre {
+  border: none;
+}
 

@@ -1,14 +1,6 @@
 $(function() {
     $.deck('.slide');
-    $.deck('showMenu');
     $.deck.defaults.codemirror.lineNumbers = false;
 
-    $('#style-themes').change(function() {
-        $('#style-theme-link').attr('href', $(this).val());
-    });
-
-    $('#transition-themes').change(function() {
-        $('#transition-theme-link').attr('href', $(this).val());
-    });
 });
 
