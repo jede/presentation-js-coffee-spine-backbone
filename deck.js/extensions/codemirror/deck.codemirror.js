@@ -123,17 +123,21 @@
           var wrapper = editor.getWrapperElement(),
               button  = $('<div>', {
                 "class" : "button",
-                text : "Run"
+                text : "run"
               }).prependTo(wrapper),
               output = $('<div>', {
                   "class" : opts.classes.codemirrorresult
               }).appendTo($(wrapper).parent()),
+              clear = $('<div>', {
+                "class" : "button",
+                text : "clear"
+              }).prependTo(output),
               isCoffee = codeblock.attr("mode").toUpperCase() === "COFFEESCRIPT";
 
               if (isCoffee) {
                 var compile = $('<div>', {
                   "class" : "button compile",
-                  text : "Compile"
+                  text : "compile"
                 }).prependTo(wrapper);
                 compile.click(function(editor, output) {
                   return function(event) {
@@ -141,6 +145,11 @@
                   }(editor, output);
                 });
               }
+
+          clear.click(function(event) {
+            $(this).parent().html('');
+            event.preventDefault();
+          });
 
           button.click(function(editor, output){
 
@@ -202,6 +211,7 @@
               });
 
               combinedSource += isCoffee ?  CoffeeScript.compile(editor.getValue()) : editor.getValue();
+              //console.log("<code><pre>" + combinedSource + "</pre></code>");
 
               // Append all cleanup scripts
               $.each(cleanupScripts, function() {

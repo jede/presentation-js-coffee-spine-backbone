@@ -10,3 +10,7 @@
 .deck-container .slide .CodeMirror .button.compile {
   margin-right: 45px;
 }
+
+ul { list-style: none; }
+ul.nice > li:before { content: "» "; }
+
