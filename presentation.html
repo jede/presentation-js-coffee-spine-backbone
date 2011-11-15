@@ -304,26 +304,56 @@ console.log(o.a);
   <br/>  <br/>
 
   <textarea id="code4" name="code" class="code" mode="javascript" theme="elegant" style="display: none;" runnable="true" globals="$">
-  function times_five(n){
-    five = 5;
-    return five * n;
-  };
-  times_five(5); // 25
-  five; // 5
+function times_five(n){
+  five = 5;
+  return five * n;
+};
+times_five(5); // 25
+five; // 5
   </textarea>
 </section>
 
 <section class="slide" id="javascript-wow-example-3">
   <br/>  <br/>
 
-  <textarea id="code4" name="code" class="code" mode="javascript"
-    theme="elegant" style="display: none; width: 50%" runnable="true" globals="$">
-  abc(); //works
-  function abc(){ 
-  }
-  abc(); //works
+  <textarea id="code4" name="code" class="code" mode="javascript"  theme="elegant" style="display: none;" runnable="true" globals="$">
+abc(); //works
+function abc(){ 
+}
+abc(); //works
+
+xyz(); //undefined!  
+xyz = function(){    
+}  
+xyz(); //works 
    </textarea>
 </section>
+
+<section class="slide" id="javascript-wow-example-4">
+  <br/>  <br/>
+
+  <textarea id="code4" name="code" class="code" mode="javascript"  theme="elegant" style="display: none;" runnable="true" globals="$">
+function abc() { 
+  xyz = function(){ 
+  } 
+}
+
+console.log(typeof xyz);
+   </textarea>
+</section>
+
+<section class="slide" id="javascript-wow-example-5">
+  <br/>  <br/>
+
+  <textarea id="code4" name="code" class="code" mode="javascript"  theme="elegant" style="display: none;" runnable="true" globals="$">
+xyz = function abc() {
+
+}
+
+console.log(typeof abc);
+  </textarea>
+</section>
+
 
 
 <section class="slide" id="coffee-example">
