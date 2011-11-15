@@ -491,12 +491,51 @@ cubes = (math.cube num for num in list)
 <section class="slide" id="backbone-example-1">
 <br/><br/>
 <textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="false">
-Note = Backbone.Model.extend
+Book = Backbone.Model.extend
   initialize: ->
+
+new Book title: "Processen", author: "Franz Kafka", year: 1906;
 </textarea>
 </section>
 
-<section class="slide" id="backbone-example-1">
+<section class="slide" id="backbone-example-2">
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="false">
+Library = Backbone.Collection.extend
+  model: Book
+  url: '/books'
+  comparator: (book)->
+    book.get 'year'
+
+Library.fetch()
+
+//or
+
+new Library [
+  {title: "Max badar"}
+]
+</textarea>
+</section>
+
+<section class="slide" id="backbone-example-3">
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="false">
+Workspace = Backbone.Router.extend
+  routes:
+    "help":                 "help"    # #help
+    "search/:query":        "search"  # #search/kiwis
+    "search/:query/p:page": "search"  # #search/kiwis/p7
+
+  help: ->
+    #...
+
+  search: (query, page) ->
+    #...
+</textarea>
+</section>
+
+
+<section class="slide" id="backbone-example-10">
 <br/><br/>
 <textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="false">
 ItemView = Backbone.View.extend
@@ -511,7 +550,7 @@ ItemView = Backbone.View.extend
 </section>
 
 
-<section class="slide" id="backbone-example-2">
+<section class="slide" id="backbone-example-12">
 <br/><br/>
 <textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="false">
 AlertView = Backbone.View.extend
