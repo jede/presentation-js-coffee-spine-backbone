@@ -1,5 +1,5 @@
 .deck-container .slide .CodeMirror {
-  background-color: #efefef;
+  background-color: #E3F4FC;
   color: #333;
   font-family: "Menlo Regular", Consolas, monospace, sans-serif;
 }
@@ -14,6 +14,17 @@
   margin-right: 103px;
 }
 
+.center-content h2, .center-content h3 {
+  border-bottom: none !important;
+  text-align: center;
+}
+.center-content h2 {
+  font-size: 3.5em;
+}
+.center-content img {
+  min-width: 100%;
+  border: 10px solid #eee;
+}
 ul { list-style: none; }
 ul.nice > li:before { content: "» "; }
 .deck-codemirror-result pre {

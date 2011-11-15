@@ -35,28 +35,249 @@
 </head>
 
 <body class="deck-container">
+<!-- TOC:
+ _Intro
+ _Javascript
+ _Coffescript
+ _Backbone.js
+ _Spine.js
+ _Summary
+-->
 
+<!--
+<section class="slide" id="">
+
+</section>
+-->
+
+<!-- _Intro ============================================== -->
 <section class="slide" id="title-slide">
     <h1>Javascript for programmers</h1>
     <h3>Ilia Mikhailov and Johannes Edelstam</h3>
 </section>
 
-<section class="slide" id="how-to-overview">
-    <h2>How to Make a Deck</h2>
-    <ol>
-        <li>
-            <h3>Write Slides</h3>
-            <p>Slide content is simple&nbsp;HTML.</p>
-        </li>
-        <li>
-            <h3>Choose Themes</h3>
-            <p>One for slide styles and one for deck&nbsp;transitions.</p>
-        </li>
-        <li>
-            <h3>Include Extensions</h3>
-            <p>Add extra functionality to your deck, or leave it stripped&nbsp;down.</p>
-        </li>
+<section class="slide" id="agenda">
+  <h2>Agenda</h2>
+  <div class="agenda">
+      <div class="slide" id="js-sec">
+        <h3>Javascript</h3>
+        <p>Types, equality, scope, context, function, classes</p>
+      </div>
+
+      <div class="slide" id="coffee-sec">
+        <h3>Coffeescript</h3>
+        <p>Fill me in ...</p>
+      </div>
+
+      <div class="slide" id="backbone-sec">
+        <h3>Backbone.js</h3>
+        <p>Fill me in ..</p>
+      </div>
+
+      <div class="slide" id="spine-sec">
+        <h3>Spine.js - MVC without the V</h3>
+        <p>Basic but important concepts</p>
+      </div>
+    </div>
+</section>
+
+
+<!-- _Javascript  ============================================== -->
+
+<section class="slide" id="javascript-big">
+  <h2>Javascript</h2>
+  <!-- clown background -->
+</section>
+
+<section class="slide" id="bq-example">
+  <h2>Famous quotes</h2>
+  <blockquote cite="http://example.org">
+    <p>Food is an important part of a balanced diet.</p>
+    <p><cite>Fran Lebowitz</cite></p>
+  </blockquote>
+</section>
+
+<section class="slide" id="brendan-pic">
+    <h2>Brendan Eich - The Father of Javascript</h2>
+    <img src="media/b_pirate.jpg" alt="" />
     </ol>
+</section>
+<!--
+* DHTML -> Ajax hype / Web 2.0 Craze
+* community and ecosystem
+-->
+<section class="slide" id="">
+  <h1>Javascript - The Journey</h1>
+  <h2>or ... My Journey</h2>
+</section>
+<!--
+* Beginning
+* A little later
+* A little more later
+* One day OMG
+* Mind blown
+* Today - Dance
+* Sometimes - Weird face
+* And - More weird face
+
+Latest project - JS + Coffee + Spine.js
+Me + two co-workers
+  - Före - dum dummare
+    Efter - the rock + mustacshe
+-->
+
+<section class="slide center-content" id="js-fun">
+  <h2>Javascript is NOT hard!</h2>
+  <img
+  src="http://www.reactiongifs.com/wp-content/uploads/2011/11/bill_murray.gif" alt="" />
+  <h2>It's just a little weird</h2>
+</section>
+
+<section class="slide" id="js-desc">
+<h2>Javascript - Executive Summary</h2>
+* ECMAScript (v5)
+* Dynamic
+  * Explain
+  * Tiny core, small
+  * Everything is an object
+</section>
+
+<section class="slide" id="">
+<h2>Types</h2>
+</section>
+
+<section class="slide" id="">
+<h2>Numbers</h2>
+</section>
+
+<section class="slide" id="">
+<h2>Booleans</h2>
+</section>
+
+<section class="slide" id="">
+<h2>Strings</h2>
+
+  Corrent
+    var a = "I am hip";
+  Preferred?
+  var div = '<div class="cool">Total awesomeness</div>';
+  var a = 'I' + 'am' + 'hip';
+  string methods
+</section>
+
+<section class="slide" id="">
+<h2>null</h2>
+</section>
+
+<section class="slide" id="">
+<h2>undefined</h2>
+</section>
+
+<section class="slide" id="">
+<h2>Bonus - NaN</h2>
+</section>
+
+<section class="slide" id="">
+<h2>Equality</h2>
+</section>
+
+<section class="slide" id="">
+<h2>typeof and instanceof</h2>
+</section>
+
+<section class="slide" id="">
+<h2>Control statements</h2>
+Circuit operator ||
+(if obj && obj.prop) obj.prop = "Hoozay!"
+
+</section>
+
+<section class="slide" id="">
+<h2>Array</h2>
+* new Array vs literal
+* Array methods
+</section>
+
+<section class="slide" id="">
+<h2>Date</h2>
+Examples
+</section>
+
+<section class="slide" id="">
+<h2>RegEx</h2>
+Examples
+</section>
+
+<section class="slide" id="">
+<h2>Object</h2>
+* new Object vs literal
+* Parens are optional
+* Looping thru properties (hasOwnProperty)
+</section>
+
+<section class="slide" id="">
+<h2>Functions</h2>
+* First class
+* Borat pic
+</section>
+
+<section class="slide" id="">
+<h2>Scope</h2>
+</section>
+
+<section class="slide" id="">
+<h2>Function arguments</h2>
+</section>
+
+<section class="slide" id="">
+<h2>Call and apply</h2>
+</section>
+
+<section class="slide" id="">
+<h2>Clojures</h2>
+</section>
+
+<section class="slide" id="">
+<h2>Self-executing functions</h2>
+</section>
+
+<section class="slide" id="">
+<h2>Functions as arguments</h2>
+</section>
+
+<section class="slide" id="">
+<h2>Module pattern</h2>
+</section>
+
+<section class="slide" id="">
+<h2>Code style</h2>
+* Semicolons
+* Curly braces
+</section>
+
+<section class="slide" id="">
+<h2>Constructor functions</h2>
+</section>
+
+<section class="slide" id="">
+<h2>Prototype</h2>
+</section>
+
+<section class="slide" id="">
+<h2>Class emulation</h2>
+Many approaches, choose one
+</section>
+
+<section class="slide" id="">
+<h2>Prototypal Inheritance</h2>
+</section>
+
+<section class="slide" id="">
+<h2>Includes</h2>
+</section>
+
+<section class="slide" id="">
+<h2>Extends</h2>
 </section>
 
 <section class="slide" id="javascript-example">
@@ -68,15 +289,67 @@ console.log(o.a);
   </textarea>
 </section>
 
+<!-- _Coffeescript ============================================ -->
+
 <section class="slide" id="coffee-example">
   <h2>Coffeescript Example</h2>
   <textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
 a = ->
-  return "I like coffee"
+  return "Like a boss!"
 console.log a()
   </textarea>
 </section>
 
+
+<!-- _Backbone.js ============================================== -->
+<!-- _Spine.js    ============================================== -->
+<!--
+
+- Prata om Maccman (ung, skrev en bok medans han reste jorden runt, fick nyss
+  jobb på Twitter)
+- Spine.mobile.js
+- MVC without the V
+- Helper and not a jQuery replacement
+- jQuery is the glue
+- Many plugins
+- Lightweight, simple
+- Written in Coffee
+- JS compatible?
+- Clientside templating choose one:
+  - underscore
+  - Jquery
+  - mustasche.js
+  - handlebars.js
+  - ejs
+
+Controllers
+ elements
+ events
+ - Are the hart of the application
+
+Models
+  - Cool, but for SPAs or something
+  - Classes and arrays are often enough
+
+Cross controller communication
+Spine.bind / Spine.trigger
+
+-->
+<!-- _Summary     ============================================== -->
+<!--
+- KISS principen (bild på Kiss)
+  http://www.flickr.com/photos/aresauburnphotos/4123108117/
+- Learn JS basics first before jumping head first into Coffee (fail pic)
+- Try out spine or backbone
+  Crawling baby pic?
+- Stay disciplined
+  Russian army pic
+-Hard to write "correct" javascript. Takes a lot of effort and experience.
+- Don't give up!
+  Runner pic?
+
+Tnx. Conan obrien applauds pic
+-->
 <section class="slide" id="credits">
   <ul class="nice">
     <li>Clown - http://www.flickr.com/photos/cogdog/6129164570/</li>
