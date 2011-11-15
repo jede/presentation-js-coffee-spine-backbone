@@ -385,20 +385,47 @@ var arr = new Array();
 arr[0] = 1;
 arr[1] = true;
 
-// Correct
+// Question?
+// What is new Array(10) and new Array(1, 2, 3)
+
+// Good - Array literals
 var arr = [1, true];
 
+// Arrays have many useful methods. Go and expore them!
+
+var fruits = ["mango", "watermelon"];
+fruits.push("banana", "apple", "peach");
+console.log(fruits);
 </textarea>
 </section>
 
 <section class="slide" id="">
-<h2>Date</h2>
-Examples
+<h2>Lets talk about dates</h2>
+<h3>No! Boring. Buggy. Strange. Let's skip.</h3>
 </section>
 
 <section class="slide" id="">
-<h2>RegEx</h2>
-Examples
+<h2>Let's talk about regular expressions</h2>
+<h3>Fun facts</h3>
+<p>Many of the JavaScript's features were borrowed from other languages. The
+syntax came from Java, functions came from Scheme, and prototypal inheritance
+came from Self. JavaScript's Regular Expression feature was borrowed from
+Perl.
+</p>
+<textarea id="arrays" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+// Bad
+var re = new RegExp("^\d*$", 'g'); // 'g' is for global
+
+// Good
+var re = /^\d*$/g;
+
+// Methods that work with regex are:
+//  regexp.exec, regex.test, string.match,
+//  string.replace, string.search, string.split
+
+// Prefer these over string operations because regex ops are faster
+</textarea>
+
 </section>
 
 <section class="slide" id="">
@@ -511,7 +538,7 @@ five; // 5
 
   <textarea id="code4" name="code" class="code" mode="javascript"  theme="elegant" style="display: none;" runnable="true" globals="$">
 abc(); //works
-function abc(){ 
+function abc(){
 }
 abc(); //works
 
@@ -553,7 +580,7 @@ console.log(typeof abc);
 var abc = function(){  
   xyz(); //undefined!  
 
-  var xyz = function() {   
+  var xyz = function() { 
     xyz(); //works 
   }
       
@@ -651,18 +678,18 @@ cubes = (math.cube num for num in list)
 </section>
 
 <section class="slide" id="jagskabara-2">
-    <h1>Jag ska bara...</h1>    
+    <h1>Jag ska bara...</h1>
     <img src="media/jagskabara2.png" style="position: absolute; left: 70%; top: 20%;" alt="" />
 </section>
 
 <section class="slide" id="jagskabara-3">
-    <h1>Jag ska bara...</h1>    
+    <h1>Jag ska bara...</h1>
     <img src="media/jagskabara1.png" style="position: absolute; left: 10%; top: 10%;" alt="" />
     <img src="media/jagskabara2.png" style="position: absolute; left: 70%; top: 20%;" alt="" />
 </section>
 
 <section class="slide" id="jagskabara-4">
-    <h1>Jag ska bara...</h1>    
+    <h1>Jag ska bara...</h1>
     <img src="media/jagskabara1.png" style="position: absolute; left: 10%; top: 10%;" alt="" />
     <img src="media/jagskabara2.png" style="position: absolute; left: 70%; top: 20%;" alt="" />
     <img src="media/jagskabara3.png" style="position: absolute; left: 30%; top: 50%;" alt="" />
