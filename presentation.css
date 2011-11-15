@@ -1,0 +1,33 @@
+.deck-container .slide .CodeMirror {
+  background-color: #E3F4FC;
+  color: #333;
+  font-family: "Menlo Regular", Consolas, monospace, sans-serif;
+}
+.deck-container .slide .deck-codemirror-result {
+  background: #fff;
+  color: #222;
+}
+.deck-container .slide .CodeMirror .button.clear {
+  margin-right: 50px;
+}
+.deck-container .slide .CodeMirror .button.compile {
+  margin-right: 103px;
+}
+
+.center-content h2, .center-content h3 {
+  border-bottom: none !important;
+  text-align: center;
+}
+.center-content h2 {
+  font-size: 3.5em;
+}
+.center-content img {
+  min-width: 100%;
+  border: 10px solid #eee;
+}
+ul { list-style: none; }
+ul.nice > li:before { content: "» "; }
+.deck-codemirror-result pre {
+  border: none;
+}
+
