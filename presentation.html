@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="presentation.css">
 
     <script src="deck.js/modernizr.custom.js"></script>
+    <script src="javascript/underscore.js"></script>    
+    <script src="javascript/backbone.js"></script>    
 </head>
 
 <body class="deck-container">
@@ -871,8 +873,11 @@ splats...
   --!>
 <br/><br/>
   <textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
+
 fill = (container, liquid = "coffee") ->
   "Filling the #{container} with #{liquid}..."
+
+console.log fill("cup")
   </textarea>
 </section>
 
@@ -925,6 +930,11 @@ cubes = (math.cube num for num in list)
 <img src="media/trust.gif" class="w40"/>
 </section>
 
+<section class="slide center-content" id="coffee-trust-why">
+<h1>It's just JavaScript!</h1>
+</section>
+
+
 <section class="slide" id="backbone">
     <img src="media/backbone.png" style="margin-top: 30%;" alt="" />
 </section>
@@ -961,6 +971,28 @@ cubes = (math.cube num for num in list)
   <h3 style="position: absolute; left: 16%; top: 36%;">Backbone.Collection</h3>
   <h3 style="position: absolute; left: 67%; top: 46%;">Backbone.Router</h3>
   <h3 style="position: absolute; left: 43%; top: 66%;">Backbone.View</h3>
+  <h3 style="position: absolute; left: 80%; top: 16%;">
+    Underscore.js <br/>
+    (jQuery)
+  </h3>
+</section>
+
+
+<section class="slide" id="underscore-example-1">
+<h2>Underscore.js</h2>
+<textarea id="code5" name="code" class="code" mode="coffeescript"
+  theme="elegant" style="display: none;" runnable="true"
+  globals="_">
+  
+_([1, 2, 3]).map (n) -> n * 2
+
+stooges = [
+  {name :'moe', age :40}
+  {name :'larry', age: 50}
+  {name : 'curly', age : 60}
+]
+_(stooges).pluck 'name'
+</textarea>
 </section>
 
 
@@ -970,26 +1002,32 @@ cubes = (math.cube num for num in list)
 Book = Backbone.Model.extend
   initialize: ->
 
-new Book title: "Processen", author: "Franz Kafka", year: 1906;
+book = new Book title: "Processen", author: "Franz Kafka", year: 1925;
 </textarea>
 </section>
 
 <section class="slide" id="backbone-example-2">
 <br/><br/>
-<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="false">
+<textarea id="code5" name="code" class="code" mode="coffeescript"
+  theme="elegant" style="display: none;" runnable="false" globals="$,_,Backbone">
+Book = Backbone.Model.extend {}
+  
 Library = Backbone.Collection.extend
   model: Book
   url: '/books'
   comparator: (book)->
     book.get 'year'
 
-Library.fetch()
+# books = Library.fetch()
 
-//or
+# or
 
-new Library [
-  {title: "Max badar"}
+books = new Library [
+  {title: "Max kaka", year: 1988}
+  {title: "Max fallskärm", year: 1989}
+  {title: "Max balja", year: 1987}
 ]
+
 </textarea>
 </section>
 
@@ -1013,15 +1051,25 @@ Workspace = Backbone.Router.extend
 
 <section class="slide" id="backbone-example-10">
 <br/><br/>
-<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="false">
+<textarea id="code5" name="code" class="code" mode="coffeescript"
+  theme="elegant" style="display: none;" runnable="false"
+  globals="$,_,Backbone">
+Item = Backbone.Model.extend {}
+
 ItemView = Backbone.View.extend
   tagName:  "li"
   template: _("#<%= no %> <%= name %>").template()
 
   render: ->
-    content = @template({no: 1, name: "yarr"})
+    content = @template(@model.attributes)
     $(@el).html content
     this
+
+
+view = new ItemView(model: new Item(no:1, name: "test"))
+
+view.render().el # => <li>#1 test</li>
+
 </textarea>
 </section>
 
