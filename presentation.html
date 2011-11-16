@@ -749,14 +749,8 @@ function abc(){
 abc(); //works
 
 xyz(); //undefined!
-
-
 xyz = function(){
-  
-
 }
-
-
 xyz(); //works
 
    </textarea>
@@ -767,11 +761,9 @@ xyz(); //works
 
   <textarea id="code4" name="code" class="code" mode="javascript"  theme="elegant" style="display: none;" runnable="true" globals="$">
 function abc() {
-
   xyz = function(){
 
   }
-
 }
 
 console.log(typeof xyz);
@@ -794,25 +786,14 @@ console.log(typeof abc);
 <h2>The right way...</h2>
     <textarea id="code4" name="code" class="code" mode="javascript"  theme="elegant" style="display: none;" runnable="true" globals="$">
 var abc = function(){
-
-
   xyz(); //undefined!
 
-
-
   var xyz = function() {
-
     xyz(); //works
-
   }
-    
-
 
   xyz(); //works
-
 }
-
-
 
 xyz() //undefined!
   </textarea>
