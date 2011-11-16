@@ -32,8 +32,8 @@
     <link rel="stylesheet" href="presentation.css">
 
     <script src="deck.js/modernizr.custom.js"></script>
-    <script src="javascript/underscore.js"></script>    
-    <script src="javascript/backbone.js"></script>    
+    <script src="javascript/underscore.js"></script>
+    <script src="javascript/backbone.js"></script>
 </head>
 
 <body class="deck-container">
@@ -97,7 +97,7 @@
 
 <section class="slide" id="wow">
 <h2>JavaScript Community</h2>
-<h3>Young. Hardworking. Hip, crazy</h3>
+<h3>Young. Hardworking. Hip. Crazy.</h3>
 <h3>Node.js, Coffeescript, jQuery, MooTools</h3>
 <h3>Check out Micro.js and Ender.js</h3>
 </section>
@@ -668,54 +668,57 @@ ACME.header.init();
 
 var Human = function (name) {
   this.name = name;
-}
+};
 
 Human.prototype.get_name = function () {
   return this.name;
-}
-
+};
 
 Human.prototype.speak = function (what) {
   return this.name + ' says ' + what;
-}
+};
 
-var SuperHero = function(name) {
-    this.name = "SuperHero " + name;
-}
+var ilia = new Human("Ilia");
+console.log(ilia.name);
+console.log(ilia.speak("Yo!"));
+
+var SuperHero = function (name) {
+  this.name = "SuperHero " + name;
+};
 
 SuperHero.prototype = new Human;
+
+SuperHero.prototype.speak = function (what) {
+  return this.name + " does not speak to mortals.";
+}
+
+
+var ironman = new SuperHero("Ironman");
+console.log(ironman.name);
+console.log(ironman.speak());
 </textarea>
-
-</section>
-
-<section class="slide" id="">
-<h2>Prototype</h2>
-</section>
-
-<section class="slide" id="">
-<h2>Class emulation</h2>
-Many approaches, choose one
 </section>
 
 <section class="slide" id="">
 <h2>Prototypal Inheritance</h2>
-Object.create
-
+<h3>Sorry :(</h3>
 </section>
 
 <section class="slide" id="">
 <h2>Includes</h2>
+<h3>Sorry :(</h3>
 </section>
 
 <section class="slide" id="">
 <h2>Extends</h2>
+<h3>Sorry :(</h3>
 </section>
 
 <section class="slide" id="">
 <h2>Code style</h2>
 <h3>Semicolons</h3>
 <p>I use but use your own judgement. Read up on it.</p>
-<h3>Curly braces</p>
+<h3>Curly braces</h3>
 <p>I don't use for one liners</p>
 </section>
 
@@ -752,7 +755,7 @@ xyz(); //undefined!
 
 
 xyz = function(){
-  
+
 
 }
 
@@ -805,7 +808,7 @@ var abc = function(){
     xyz(); //works
 
   }
-    
+
 
 
   xyz(); //works
@@ -983,7 +986,7 @@ cubes = (math.cube num for num in list)
 <textarea id="code5" name="code" class="code" mode="coffeescript"
   theme="elegant" style="display: none;" runnable="true"
   globals="_">
-  
+
 _([1, 2, 3]).map (n) -> n * 2
 
 stooges = [
@@ -1011,7 +1014,7 @@ book = new Book title: "Processen", author: "Franz Kafka", year: 1925;
 <textarea id="code5" name="code" class="code" mode="coffeescript"
   theme="elegant" style="display: none;" runnable="false" globals="$,_,Backbone">
 Book = Backbone.Model.extend {}
-  
+
 Library = Backbone.Collection.extend
   model: Book
   url: '/books'
