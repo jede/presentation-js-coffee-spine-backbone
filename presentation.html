@@ -638,15 +638,9 @@ ACME.header = (function(){
 }());
 
 ACME.header.init();
-
 </textarea>
 </section>
 
-<section class="slide" id="">
-<h2>Code style</h2>
-* Semicolons
-* Curly braces
-</section>
 
 <section class="slide" id="">
 <h2>Constructor functions</h2>
@@ -665,12 +659,11 @@ Human.prototype.speak = function (what) {
   return this.name + ' says ' + what;
 }
 
-SuperHero = function() {
-
+var SuperHero = function(name) {
+    this.name = "SuperHero " + name;
 }
 
 SuperHero.prototype = new Human;
-
 </textarea>
 
 </section>
@@ -698,12 +691,19 @@ Object.create
 <h2>Extends</h2>
 </section>
 
+<section class="slide" id="">
+<h2>Code style</h2>
+<h3>Semicolons</h3>
+<p>I use but use your own judgement. Read up on it.</p>
+<h3>Curly braces</p>
+<p>I don't use for one liners</p>
+</section>
+
 <!-- _Coffeescript ============================================ -->
 
 <section class="slide" id="javascript-wow-example-1">
   <br/>  <br/>
-
-  <textarea id="code4" name="code" class="code" mode="javascript" theme="elegant" style="display: none;" runnable="true" globals="$">
+<textarea id="code4" name="code" class="code" mode="javascript" theme="elegant" style="display: none;" runnable="true" globals="$">
 ￼    2 == "2" // true
     2 === "2" // false
   </textarea>
