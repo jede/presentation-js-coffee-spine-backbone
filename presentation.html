@@ -266,21 +266,21 @@ console.log(fail);
 <section class="slide" id="">
 <h2>lets talk about strings</h2>
 <textarea id="strings" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
-// Meh ...
+// meh ...
 
-var hipster = "I'm hip, yo! My blog domain name ends with .io";
+var hipster = "i'm hip, yo! my blog domain name ends with .io";
 
-// Preferred when doing DOM stuff?
+// preferred when doing dom stuff?
 
-var div = '<div id="ilia" class="hip"><span class="awesome">Me</span></div>';
+var div = '<div id="ilia" class="hip"><span class="awesome">me</span></div>';
 
-var combine = "I " + "LOVE " + " Java/Javascript";
+var combine = "i " + "love " + " java/javascript";
 
-var uncool = new String("Don't do this. Please.");
+var uncool = new string("don't do this. please.");
 
-// Strings have many methods and one property?
+// strings have many methods and one property?
 
-var howLong = "javascript".length;
+var howlong = "javascript".length;
 "hipster".replace("ster", "pie");
 </textarea>
 </section>
@@ -288,13 +288,13 @@ var howLong = "javascript".length;
 <section class="slide" id="">
 <h2>null + undefined vs. null vs. undefined</h2>
 <p>
-  From StackOverflow: <br/><br />
-  <em>null</em> is not an object, it is a primitive value. You cannot add properties to it.
-  Sometimes people wrongly assume that it is an object, because typeof null
-  returns "object". But that is actually a bug (that might even be fixed in
-  ECMAScript 6).
+  from stackoverflow: <br/><br />
+  <em>null</em> is not an object, it is a primitive value. you cannot add properties to it.
+  sometimes people wrongly assume that it is an object, because typeof null
+  returns "object". but that is actually a bug (that might even be fixed in
+  ecmascript 6).
   <p>
-  <em>undefined</em>: used by JavaScript and means “no value”. Uninitialized variables,
+  <em>undefined</em>: used by javascript and means “no value”. uninitialized variables,
   missing parameters and unknown variables have that value.
   </p>
 <textarea id="nulls" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
@@ -304,20 +304,20 @@ typeof(a); // 'undefined'
 var n = null;
 typeof(n); // 'null'
 
-// What is the output?
+// what is the output?
 
-console.log((a == n).toString());
-console.log((a === n).toString());
+console.log((a == n).tostring());
+console.log((a === n).tostring());
 
 </textarea>
 </section>
 
 <section class="slide" id="">
-<h2>Equality</h2>
-<h3>Falsy</h3>
-false, zero, empty string ,NaN, null, undefined
+<h2>equality</h2>
+<h3>falsy</h3>
+false, zero, empty string ,nan, null, undefined
 <p></p>
-<h3>Truthy</h3>
+<h3>truthy</h3>
 <p>
 true and everything else
 </p>
@@ -325,24 +325,24 @@ true and everything else
 <textarea id="eqality" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
 var a;
 function display(val) {
-  console.log(new Boolean(val).toString());
+  console.log(new boolean(val).tostring());
 }
 
 display(null);
 display(a);
-display(NaN);
+display(nan);
 display("");
 display(0);
 display(-1);
-display([]); // Array literal
+display([]); // array literal
 
-var e = 1 ==  "1"; // Equality
-var f = 1 === "1"; // Identity (value and type)
+var e = 1 ==  "1"; // equality
+var f = 1 === "1"; // identity (value and type)
 
 var g = 1 !=  "1";
 var h = 1 !== "1";
 
-// Quiz
+// quiz
 display(null == false);
 display(null === false);
 
@@ -351,47 +351,51 @@ display(null === false);
 
 <section class="slide" id="">
 <h2>typeof and instanceof</h2>
-<h3>Pass</h3>
+<h3>pass</h3>
 </section>
 
 <section class="slide" id="">
-<h2>Control statements and friends</h2>
-<h3>The usual suspects</h3>
+<h2>control statements and friends</h2>
+<h3>the usual suspects</h3>
 <p>if, else, for, for .. in, while, switch, do .. while, break, continue</p>
 <textarea id="controls" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
-// Circuit operators
+// circuit operators
 
 var a;
 var b = a || "foo";
 console.log(b);
 
-function setCoolnessFactor(user) {
-  if (user && user.factor) obj.factor = "High";
+function setcoolnessfactor(user) {
+  if (user && user.factor) obj.factor = "high";
 }
 
-var obj = {user: "ilia", password: "drowssap"}; // Object literal
+var obj = {user: "ilia", password: "drowssap"}; // object literal
 
-setCoolnessFactor(obj);
+setcoolnessfactor(obj);
 </textarea>
 
 </section>
 
 <section class="slide" id="">
-<h2>Lets talk about arrays</h2>
+<h2>lets talk about arrays</h2>
 <textarea id="arrays" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
-// Bad
+// bad
 
-var arr = new Array();
+var arr = new array();
 arr[0] = 1;
 arr[1] = true;
 
-// Question?
-// What is new Array(10) and new Array(1, 2, 3)
+// question?
+// what is new array(10) and new array(1, 2, 3)
 
-// Good - Array literals
+// possible?
+arr[6] = "monkey";
+console.log(arr);
+
+// good - array literals
 var arr = [1, true];
 
-// Arrays have many useful methods. Go and expore them!
+// arrays have many useful methods. go and expore them!
 
 var fruits = ["mango", "watermelon"];
 fruits.push("banana", "apple", "peach");
@@ -400,53 +404,165 @@ console.log(fruits);
 </section>
 
 <section class="slide" id="">
-<h2>Lets talk about dates</h2>
-<h3>No! Boring. Buggy. Strange. Let's skip.</h3>
+<h2>lets talk about dates</h2>
+<h3>no! boring. buggy. strange. let's skip.</h3>
 </section>
 
 <section class="slide" id="">
-<h2>Let's talk about regular expressions</h2>
-<h3>Fun facts</h3>
-<p>Many of the JavaScript's features were borrowed from other languages. The
-syntax came from Java, functions came from Scheme, and prototypal inheritance
-came from Self. JavaScript's Regular Expression feature was borrowed from
-Perl.
+<h2>let's talk about regular expressions</h2>
+<h3>fun facts</h3>
+<p>many of the javascript's features were borrowed from other languages. the
+syntax came from java, functions came from scheme, and prototypal inheritance
+came from self. javascript's regular expression feature was borrowed from
+perl.
 </p>
-<textarea id="arrays" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
-// Bad
-var re = new RegExp("^\d*$", 'g'); // 'g' is for global
+<textarea id="regexp" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+// bad
+var re = new regexp("^\d*$", 'g'); // 'g' is for global
 
-// Good
+// good
 var re = /^\d*$/g;
 
-// Methods that work with regex are:
+// methods that work with regex are:
 //  regexp.exec, regex.test, string.match,
 //  string.replace, string.search, string.split
 
-// Prefer these over string operations because regex ops are faster
+// prefer these over string operations because regex ops are faster
 </textarea>
 
 </section>
 
 <section class="slide" id="">
-<h2>Object</h2>
-* new Object vs literal
-* Parens are optional
-* Looping thru properties (hasOwnProperty)
+<h2>objects in short</h2>
+<textarea id="objects" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+// Bad
+var me = new Object();
+me.name = "Ilia";
+me.age = 34;
+
+// Good
+var youngerMe = {name: "Ilia", age: 25};
+
+// Objects are dictionaries. Surprise!
+</textarea>
+</section>
+
+<section class="slide center-content" id="">
+<h2>Functions. Finally!</h2>
+<img class="w40" src="http://4.bp.blogspot.com/-GHrSfzMXxIc/Tdpp5iMndPI/AAAAAAAACo4/CS0eZxU7cO8/s400/Borat.jpg" alt="" />
+<h3>
+  Functions in JavaScript are first-class objects meaning you can pass them
+  around and is what makes JavaScript tick. I like!
+</h3>
 </section>
 
 <section class="slide" id="">
-<h2>Functions</h2>
-* First class
-* Borat pic
+<h2>Function basics</h2>
+<textarea id="func_basics" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+function hello() {
+  return "Hello!";
+}
+console.log(hello());
+
+var holla = function() {
+  return "Holla!";
+};
+console.log(holla());
+
+var sayWhat = holla;
+console.log(sayWhat());
+
+console.log(typeof(holla));
+</textarea>
 </section>
 
 <section class="slide" id="">
-<h2>Scope</h2>
+<h2>Function Scope</h2>
+<textarea id="func_scope" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+// Declare all your vars at the
+// beginning of the function
+
+
+function hello() {
+  var a = "Yo!";
+
+  if (true) {
+    var b = "What?";
+  }
+  console.log(a);
+  console.log(b);
+}
+
+// OK or not OK?
+hello();
+
+// What is 'a'?
+var a = "Hej!"
+hello();
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Global and Local</h2>
+<textarea id="func_globals" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+function hello() {
+  isDebug = true;
+  // O-oh! You just created a global var
+  // that is assigned to window.isDebug
+  // Always use var!
+}
+hello();
+
+// How about this?
+var check = true;
+function checkStatus() {
+  var local = check;
+  local = false;
+  console.log(local.toString());
+}
+checkStatus();
+console.log(check.toString());
+</textarea>
 </section>
 
 <section class="slide" id="">
 <h2>Function arguments</h2>
+<textarea id="func_args" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+function createUser(email, password, gender) {
+  return { email: email, password: password, gender: gender};
+}
+
+createUser("john@example.com", "pass", "male");
+
+// And this?
+createUser("john@example.com", "pass", "male", 55);
+
+// How about this?
+createUser();
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Function arguments, cont.</h2>
+<textarea id="func_args_cont" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+function empty() {
+  console.log(arguments);
+}
+
+empty("ilia", 34, "Male");
+empty(["ilia", 34, "Male"]);
+
+var slice = Array.prototype.slice;
+
+function sliceArgs() {
+  var args = slice.call(arguments, 0);
+  console.log(args);
+}
+sliceArgs("ilia", 34, "Male");
+sliceArgs(["ilia", 34, "Male"]);
+
+
+</textarea>
 </section>
 
 <section class="slide" id="">
@@ -498,15 +614,6 @@ Many approaches, choose one
 
 <section class="slide" id="">
 <h2>Extends</h2>
-</section>
-
-<section class="slide" id="javascript-example">
-  <h2>Runnable JS</h2>
-  <textarea id="code4" name="code" class="code" mode="javascript" theme="elegant" style="display: none;" runnable="true" globals="$">
-// output my log
-var o = {a: "a", b: "b"};
-console.log(o.a);
-  </textarea>
 </section>
 
 <!-- _Coffeescript ============================================ -->
