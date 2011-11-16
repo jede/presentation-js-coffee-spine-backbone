@@ -88,14 +88,6 @@
   <h2>javascript</h2>
 </section>
 
-<section class="slide" id="bq-example">
-  <h2>famous quotes</h2>
-  <blockquote cite="http://example.org">
-    <p>food is an important part of a balanced diet.</p>
-    <p><cite>fran lebowitz</cite></p>
-  </blockquote>
-</section>
-
 <section class="slide" id="brendan-pic">
     <h2>brendan eich - the father of javascript</h2>
     <img src="media/b_pirate.jpg" alt="" />
@@ -171,6 +163,24 @@
 <h2>Javascript - Executive Summary</h2>
 <h3>Well .. OK? .. Lets try this.</h3>
 </section>
+
+<section class="slide" id="js-quote-1">
+  <p></p>
+  <blockquote cite="http://example.org">
+JS had to 'look like Java' only less so, be Java's dumb kid brother or boy-hostage sidekick.
+    <p></p>
+    <p><cite>- Brendan Eich</cite></p>
+  </blockquote>
+</section>
+
+<section class="slide" id="bq-example">
+  <p></p>
+  <blockquote cite="http://example.org">
+￼...plus, I had to be done in ten days or something worse than JS would have happened.<p></p>
+    <p><cite>- Brendan Eich</cite></p>
+  </blockquote>
+</section>
+
 
 <section class="slide" id="">
 <h2>It all started with DHTML</h2>
@@ -709,13 +719,9 @@ Object.create
 
 <!-- _Coffeescript ============================================ -->
 
-<section class="slide" id="javascript-wow-example-1">
-  <br/>  <br/>
-
-  <textarea id="code4" name="code" class="code" mode="javascript" theme="elegant" style="display: none;" runnable="true" globals="$">
-￼    2 == "2" // true
-    2 === "2" // false
-  </textarea>
+<section class="center-content slide" id="javascript-wow-example-2">
+<h2>Functions - We need to go deeper!</h2>
+<img src="media/deeper.gif"/>
 </section>
 
 <section class="slide" id="javascript-wow-example-2">
@@ -789,6 +795,10 @@ xyz() //undefined!
   </textarea>
 </section>
 
+<section class="slide center-content" id="javascript-approve">
+<h2>Fantastic!</h2>
+<img src="media/approve.gif" class="w40"/>
+</section>
 
 
 <section class="slide" id="coffee-example-1">
@@ -797,20 +807,59 @@ xyz() //undefined!
       sum = ->
       sum = (a, b) ->
       sum = (a, b) -> a + b
+      scopes
   -->
 
   <textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
-->
+sum = ->
   </textarea>
 </section>
 
+<section class="slide center-content" id="coffee-amazing">
+<h2>Mmmmmmm coffee!</h2>
+<img src="media/mmm.gif"/>
+</section>
+
+
+
+<section class="slide" id="javascript-wow-example-equals">
+  <br/>  <br/>
+
+  <textarea id="code4" name="code" class="code" mode="javascript" theme="elegant" style="display: none;" runnable="true" globals="$">
+￼    2 == "2" // true
+    2 === "2" // false
+  </textarea>
+</section>
+
+<section class="slide" id="coffee-example-7">
+<!-- Visa:
+healthy = 200 > cholesterol > 60
+--!>
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
+cholesterol = 127
+
+healthy = cholesterol == 150
+</textarea>
+</section>
+
+
 <section class="slide" id="coffee-example-2">
+<!-- Visa:
+splats...
+  --!>
 <br/><br/>
   <textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
 fill = (container, liquid = "coffee") ->
   "Filling the #{container} with #{liquid}..."
   </textarea>
 </section>
+
+<section class="slide center-content" id="coffee-amazing">
+<h2>Amazing!</h2>
+<img src="media/amazing.gif"/>
+</section>
+
 
 <section class="slide" id="coffee-example-3">
 <br/><br/>
@@ -840,23 +889,6 @@ theSwitch = 0
 </textarea>
 </section>
 
-<section class="slide" id="coffee-example-6">
-<br/><br/>
-<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
-tag = "[impossible]"
-
-[open, contents..., close] = tag.split("")
-</textarea>
-</section>
-
-<section class="slide" id="coffee-example-7">
-<br/><br/>
-<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
-cholesterol = 127
-
-healthy = 200 > cholesterol > 60
-</textarea>
-</section>
 
 <section class="slide" id="coffee-example-8">
 <br/><br/>
@@ -865,6 +897,11 @@ list = [1, 2, 3, 4, 5]
 
 cubes = (math.cube num for num in list)
 </textarea>
+</section>
+
+<section class="slide center-content" id="coffee-trust">
+<h2>Ok, how can we trust you?</h2>
+<img src="media/trust.gif" class="w40"/>
 </section>
 
 <section class="slide" id="backbone">
@@ -889,8 +926,8 @@ cubes = (math.cube num for num in list)
 <section class="slide" id="jagskabara-4">
     <h1>Jag ska bara...</h1>
     <img src="media/jagskabara1.png" style="position: absolute; left: 10%; top: 10%;" alt="" />
-    <img src="media/jagskabara2.png" style="position: absolute; left: 70%; top: 20%;" alt="" />
-    <img src="media/jagskabara3.png" style="position: absolute; left: 30%; top: 50%;" alt="" />
+      <img src="media/jagskabara2.png" style="position: absolute; left: 70%; top: 20%;" alt="" />
+      <img src="media/jagskabara3.png" style="position: absolute; left: 30%; top: 50%;" alt="" />
 </section>
 
 <section class="slide" id="backbone-mvc-1">
