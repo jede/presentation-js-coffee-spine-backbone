@@ -32,7 +32,11 @@ img.w80 { min-width: 80%;}
 #javascript-heading {
   background: url(media/clown.jpg) no-repeat no-repeat;
 }
-#javascript-heading h2 {
+
+#spine-heading {
+  background: url(media/centipede.jpg) no-repeat no-repeat;
+}
+#javascript-heading h2, #spine-heading h2 {
   position: absolute;
   top: 10%;
   right: 15%;

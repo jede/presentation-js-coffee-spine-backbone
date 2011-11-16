@@ -969,15 +969,171 @@ AlertView = Backbone.View.extend
 </textarea>
 </section>
 
-
-
-
-
-
 <!-- _Backbone.js ============================================== -->
 <!-- _Spine.js    ============================================== -->
-<!--
 
+<section class="slide" id="spine-heading">
+  <h2>spine.js</h2>
+</section>
+
+<section class="slide center-content">
+  <h1>Latest Project</h1>
+</section>
+
+<section class="slide center-content">
+<h2>Before Spine.js and Coffeescript</h2>
+<img class="w50"
+src="http://www.reactiongifs.com/wp-content/uploads/2011/09/illK6U.gif" alt="" />
+</section>
+
+<section class="slide center-content">
+<h2>I sneaked in <br />Spine.js and Coffeescript</h2>
+<img class="w50"
+src="http://www.reactiongifs.com/wp-content/gallery/dance-party/glowsticking.gif" alt="" />
+</section>
+
+<section class="slide center-content">
+<h2>Aftermath</h2>
+<div style="text-align: center;">
+<img style="display:inline-block; height: 30%; margin-right: 5%"
+src="http://www.reactiongifs.com/wp-content/uploads/2011/05/dwayne-the-rock-johnson_likes_it.gif" alt="" />
+<img style="display: inline-block; height: 30%"
+src="http://www.reactiongifs.com/wp-content/gallery/yes/rahr_yes.gif" alt="" />
+</div>
+</section>
+
+<section class="slide" id="">
+<h2>Spine.js - Executive summary</h2>
+<ul class="nice">
+  <li>Created by Alex MacCaw (@maccman) while writing JavaScript Web
+  Applications book</li>
+  <li>(Re)written in CoffeeScript.</li>
+  <li>Lightweight. Simple. 500 LOC. ~ 2K minified and gzipped</li>
+  <li>Inspired by Backbone.js. Also borrowed a few features from it</li>
+  <li>There is also Spine.mobile.js</li>
+  <li>For best experience you need to include <em>jQuery</em></li>
+  <li>Has many plugins</li>
+  <li>JS compatible?</li>
+  <li>No views. Only controllers and models ... and classes</li>
+</ul>
+</section>
+
+
+<section class="slide" id="backbone-example-10">
+<h2>Spine. Page setup.</h2>
+<textarea id="spine-contr" name="code" class="code" mode="htmlmixed" theme="elegant" style="display: none;" runnable="false">
+<html>
+<body>
+  ....
+  <nav id="menu">
+    <ul>
+      <li class="subsections">
+      <ul>Sub Menu
+          <li>First</li>
+          ...
+        </ul>
+      </li>
+    </ul>
+    <input type="text" id="#name" />
+    </nav>
+  ....
+  <script src="js/jquery.js"></script>
+  <script src="js/spine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Spine Controllers. The glue.</h2>
+<textarea id="spine-contr" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="false">
+# app.js
+
+class MenuController extends Spine.Controller
+  elements:
+    "li.subsections" : "subsections",
+    "#name" : "message",
+    ...
+  events:
+    "a.item click" : "clickLink"
+    "#message focus": "enterMessageField",
+    ...
+  constructor: ->
+    super
+    @default = "No name"
+
+  clickLink: (e) ->
+    target = $(e.target)
+    target.text('Clicked!')
+    e.preventDefault()
+
+  enterMessageField: (e) =>
+    field = $(e.target)
+    field.val(@default)
+
+$ ->
+  new MenuController el: "#menu"
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Spine Models</h2>
+<textarea id="spine-models" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="false">
+class User extends Spine.Model
+  @configure "User", "first_name", "last_name"
+
+  fullName: -> [@first_name, @last_name].join(' ')
+
+user = new User(first_name: "Ivan", last_name: "Drago")
+user.save()
+
+users = Users.all()
+
+class UserController extends Spine.Controller
+  elements:
+    ...
+  events:
+    ...
+  constructor: ->
+    super
+    User.bind("destroy", @userDestroyed)
+
+  userDestroyed: (user) =>
+    # Do something here ...
+
+</textarea>
+</section>
+<section class="slide" id="spine-events">
+<h2>Spine. Cross controller communication.</h2>
+<textarea id="spine-events" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;">
+class MenuController extends Spine.Controller
+  elements:
+    ...
+  events:
+    ...
+  constructor: ->
+    super
+    Spine.bind("ns:stateChanged", @stateChanged)
+
+  stateChanged: (state) =>
+    # got state
+    @process state
+
+  process: (state) ->
+    # do something nice
+
+class ItemController extends Spine.Controller
+  ...
+  constructor: ->
+    super
+
+  clicked: (e) ->
+    Spine.trigger("ns:stateChanged", {id: 1, status: false})
+</textarea>
+</section>
+
+<!--
 
 Latest project - JS + Coffee + Spine.js
 Me + two co-workers
@@ -986,40 +1142,17 @@ Me + two co-workers
   dum dummare  http://www.reactiongifs.com/wp-content/uploads/2011/09/illK6U.gif
   glasses - http://www.reactiongifs.com/wp-content/uploads/2011/05/bubbles2.gif
 
-  Efter - the rock + mustacshe
+  Efter - the rock + m"stacshe
   http://www.reactiongifs.com/wp-content/uploads/2011/05/dwayne-the-rock-johnson_likes_it.gif
   http://www.reactiongifs.com/wp-content/gallery/dance-party/lebowski_dance.gif
   http://www.reactiongifs.com/wp-content/gallery/yes/rahr_yes.gif
 
-- Prata om Maccman (ung, skrev en bok medans han reste jorden runt, fick nyss
-  jobb på Twitter)
-- Spine.mobile.js
-- MVC without the V
-- Helper and not a jQuery replacement
-- jQuery is the glue
-- Many plugins
-- Lightweight, simple
-- Written in Coffee
-- JS compatible?
 - Clientside templating choose one:
   - underscore
   - Jquery
   - mustasche.js
   - handlebars.js
   - ejs
-
-Controllers
- elements
- events
- - Are the hart of the application
-
-Models
-  - Cool, but for SPAs or something
-  - Classes and arrays are often enough
-
-Cross controller communication
-Spine.bind / Spine.trigger
-
 -->
 <!-- _Summary     ============================================== -->
 <!--
