@@ -107,12 +107,12 @@
 -->
 
 <section class="slide" id="wow">
-<h1>"java/javascript"</h1>
+<h1>"Java/JavaScript"</h1>
 </section>
 
 <section class="slide center-content" id="journey">
-  <h1 class="center">javascript - the journey</h1>
-  <h2 class="center">my journey</h2>
+  <h1 class="center">JavaScript - The Journey</h1>
+  <h2 class="center">My Journey</h2>
 </section>
 
 <section class="slide center-content" id="js-fun">
@@ -137,7 +137,7 @@
 
 <section class="slide center-content" id="">
   <h2>omg!</h2>
-  <img class="w60" src="http://www.reactiongifs.com/wp-content/uploads/2011/10/omgooh1.gif" alt="" />
+  <img class="w60" src=" http://www.reactiongifs.com/wp-content/uploads/2011/10/OMGOOh1.gif" alt="" />
 </section>
 
 <section class="slide center-content" id="">
@@ -168,22 +168,18 @@
 </section>
 
 <section class="slide" id="js-desc">
-<h2>javascript - executive summary</h2>
-* ecmascript (v5)
-* dynamic
-  * explain
-  * tiny core, small
-  * everything is an object
+<h2>Javascript - Executive Summary</h2>
+<h3>Well .. OK? .. Lets try this.</h3>
 </section>
 
 <section class="slide" id="">
-<h2>it all started with dhtml</h2>
+<h2>It all started with DHTML</h2>
   <textarea id="dhtml" name="code" class="code" mode="htmlmixed" theme="elegant" style="display: none;">
 <html>
   <body>
-    <!-- remember this? -->
+    <!-- Remember this? -->
     <h1 onmouseover="style.color='red'" onmouseout="style.color='black'">
-      mouseover me! please!
+      Mouseover me! Please!
     </h1>
   </body>
 </html>
@@ -351,11 +347,11 @@ display(null === false);
 
 <section class="slide" id="">
 <h2>typeof and instanceof</h2>
-<h3>pass</h3>
+<h3>Pass</h3>
 </section>
 
 <section class="slide" id="">
-<h2>control statements and friends</h2>
+<h2>Control statements and friends</h2>
 <h3>the usual suspects</h3>
 <p>if, else, for, for .. in, while, switch, do .. while, break, continue</p>
 <textarea id="controls" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
@@ -560,8 +556,6 @@ function sliceArgs() {
 }
 sliceArgs("ilia", 34, "Male");
 sliceArgs(["ilia", 34, "Male"]);
-
-
 </textarea>
 </section>
 
@@ -570,19 +564,91 @@ sliceArgs(["ilia", 34, "Male"]);
 </section>
 
 <section class="slide" id="">
-<h2>Clojures</h2>
+<h2>Clojures and Curry</h2>
+<textarea id="clojures" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+
+function clojure() {
+  return function(name) {
+    console.log("Hello, " + name);
+  };
+}
+var hello = clojure();
+hello("Johannes");
+
+function curry() {
+  var greeting = "Hola";
+  return function(name) {
+    console.log(greeting + " , " + name);
+  };
+}
+var greet = curry();
+greet("Ilia");
+
+function customGreeting(greet) {
+  return function(name) {
+    console.log(greet + ", " + name);
+  };
+}
+var brother = customGreeting("What's happening my brother");
+brother("Oscar");
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2 id="test-heading">Functions as arguments</h2>
+<textarea id="func_as_args" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;" globals="$">
+function execHandler(name, func) {
+  func(name);
+}
+
+// Also called anonymous functions
+
+execHandler("ilia", function(name) {
+  console.log("Got '" + name +"' as an argument");
+});
+
+$("#test-heading").click(function(e) {
+  alert("Hello");
+});
+</textarea>
 </section>
 
 <section class="slide" id="">
 <h2>Self-executing functions</h2>
-</section>
+<textarea id="self_exec" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+(function(){
+  console.log("What just happened?");
+}());
 
-<section class="slide" id="">
-<h2>Functions as arguments</h2>
+// Another way
+(function(){
+  console.log("I don't think this is correct");
+})();
+</textarea>
 </section>
 
 <section class="slide" id="">
 <h2>Module pattern</h2>
+<textarea id="self_exec" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+var ACME = window.ACME || {};
+
+ACME.header = (function(){
+  var secret = "xxx";
+
+  function privateFunc() {
+    console.log(secret);
+  }
+  return {
+    init: function() {
+      privateFunc();
+    }
+  };
+
+}());
+
+ACME.header.init();
+
+</textarea>
 </section>
 
 <section class="slide" id="">
@@ -593,6 +659,29 @@ sliceArgs(["ilia", 34, "Male"]);
 
 <section class="slide" id="">
 <h2>Constructor functions</h2>
+<textarea id="objects" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+
+var Human = function (name) {
+  this.name = name;
+}
+
+Human.prototype.get_name = function () {
+  return this.name;
+}
+
+
+Human.prototype.speak = function (what) {
+  return this.name + ' says ' + what;
+}
+
+SuperHero = function() {
+
+}
+
+SuperHero.prototype = new Human;
+
+</textarea>
+
 </section>
 
 <section class="slide" id="">
@@ -606,6 +695,8 @@ Many approaches, choose one
 
 <section class="slide" id="">
 <h2>Prototypal Inheritance</h2>
+Object.create
+
 </section>
 
 <section class="slide" id="">
@@ -957,7 +1048,9 @@ Spine.bind / Spine.trigger
 Tnx. Conan obrien applauds pic
 -->
 <section class="slide" id="credits">
+  <h2>Photo credits</h2>
   <ul class="nice">
+    <li>Animated gifs from reactiongifs.com</li>
     <li>Clown - http://www.flickr.com/photos/cogdog/6129164570/</li>
     <li>Coffee - http://www.flickr.com/photos/doug88888/3765136858/</li>
     <li>Pirate - http://www.flickr.com/photos/jsconf/4587502948/</li>
