@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Javascript for Programmers</title>
+
+    <meta name="description" content="Javascript for Programmers">
+    <meta name="author" content="Ilia Mikhailov, Jonannes Edelstam">
+    <meta name="viewport" content="width=1024, user-scalable=no">
+
+    <!-- Core and extension CSS files -->
+    <link rel="stylesheet" href="deck.js/core/deck.core.css">
+    <link rel="stylesheet" href="deck.js/extensions/goto/deck.goto.css">
+    <link rel="stylesheet" href="deck.js/extensions/menu/deck.menu.css">
+    <link rel="stylesheet" href="deck.js/extensions/navigation/deck.navigation.css">
+    <link rel="stylesheet" href="deck.js/extensions/status/deck.status.css">
+    <link rel="stylesheet" href="deck.js/extensions/hash/deck.hash.css">
+
+    <link rel="stylesheet" id="style-theme-link" href="deck.js/themes/style/neon.css">
+    <link rel="stylesheet" id="transition-theme-link" href="deck.js/themes/transition/fade.css">
+
+    <link rel="stylesheet" href="deck.js/extensions/codemirror/deck.codemirror.css">
+    <link rel="stylesheet" href="deck.js/extensions/codemirror/themes/elegant.css">
+    <link rel="stylesheet" href="deck.js/extensions/codemirror/themes/default.css">
+    <link rel="stylesheet" href="deck.js/extensions/codemirror/themes/neat.css">
+
+    <link rel="stylesheet" href="presentation.css">
+
+    <script src="deck.js/modernizr.custom.js"></script>
+    <script src="javascript/underscore.js"></script>
+    <script src="javascript/backbone.js"></script>
+</head>
+
+<body class="deck-container">
+<!-- TOC:
+ _Intro
+ _Javascript
+ _Coffescript
+ _Backbone.js
+ _spine.js
+ _summary
+-->
+
+<!--
+<section class="slide" id="">
+
+</section>
+-->
+
+<!-- _intro ============================================== -->
+<section class="slide" id="title-slide">
+    <h1 class="center intro">javascript for programmers</h1>
+    <h3 class="intro">ilia mikhailov and johannes edelstam</h3>
+</section>
+
+<section class="slide" id="agenda">
+  <h2>Agenda</h2>
+  <div class="agenda">
+      <div class="slide" id="js-sec">
+        <h3>JavaScript</h3>
+        <p>types, equality, scope, context, function, classes</p>
+      </div>
+
+      <div class="slide" id="coffee-sec">
+        <h3>Coffeescript</h3>
+        <p>The selling point</p>
+      </div>
+
+      <div class="slide" id="backbone-sec">
+        <h3>Backbone.js</h3>
+        <p>MVC from the creator of Coffeescript</p>
+      </div>
+
+      <div class="slide" id="spine-sec">
+        <h3>Spine.js - MVC without the V</h3>
+        <p>What? Why? How?</p>
+      </div>
+    </div>
+</section>
+
+
+<!-- _javascript  ============================================== -->
+
+<section class="slide" id="javascript-heading">
+  <h2>javascript</h2>
+</section>
+
+<section class="slide" id="wow">
+<h2>JavaScript Community</h2>
+<h3>Young. Hardworking. Hip. Crazy.</h3>
+<h3>Node.js, Coffeescript, jQuery, MooTools</h3>
+<h3>Check out Micro.js and Ender.js</h3>
+</section>
+
+<section class="slide" id="wow">
+<h1>Java/JavaScript</h1>
+</section>
+
+<section class="slide center-content" id="journey">
+  <h1 class="center">JavaScript - The Journey</h1>
+  <h2 class="center">My Journey</h2>
+</section>
+
+<section class="slide center-content" id="js-fun">
+  <h2>In the beginning ...</h2>
+  <img class="w60" src="http://www.reactiongifs.com/wp-content/uploads/2011/09/7e7741186661.gif" alt="" />
+</section>
+
+<section class="slide center-content" id="">
+  <h2>... a little later ...</h2>
+  <img class="w60" src="http://www.reactiongifs.com/wp-content/uploads/2011/05/omg_wtf.gif" alt="" />
+</section>
+
+<section class="slide center-content" id="">
+  <h2>... beyond all hope ...</h2>
+  <img class="w60" src="http://www.reactiongifs.com/wp-content/uploads/2011/05/extreme_face.gif" alt="" />
+</section>
+
+<section class="slide center-content" id="">
+  <h2>... but suddenly ...</h2>
+  <img class="w60" src="http://www.reactiongifs.com/wp-content/uploads/2011/09/9832_81be.gif" alt="" />
+</section>
+
+<section class="slide center-content" id="">
+  <h2>OMG!</h2>
+  <img class="w60" src=" http://www.reactiongifs.com/wp-content/uploads/2011/10/OMGOOh1.gif" alt="" />
+</section>
+
+<section class="slide center-content" id="">
+  <h2>Mind. Blown.</h2>
+  <img class="w50" src="http://www.reactiongifs.com/wp-content/uploads/2011/09/mind_blown.gif" alt="" />
+</section>
+
+<section class="slide center-content" id="">
+  <h2>Today mostly</h2>
+  <img class="w60" src="http://www.reactiongifs.com/wp-content/uploads/2011/11/chappelle_dance.gif" alt="" />
+</section>
+
+<section class="slide center-content" id="">
+  <h2>But with this face</h2>
+  <img class="w50" src="http://www.reactiongifs.com/wp-content/uploads/2011/05/face.gif" alt="" />
+</section>
+
+<section class="slide center-content" id="">
+  <h2>And sometimes still</h2>
+  <img class="w60" src="http://www.reactiongifs.com/wp-content/uploads/2011/11/loss_for_words.gif" alt="" />
+</section>
+
+<section class="slide center-content" id="js-fun">
+  <h2>JavaScript is NOT hard!</h2>
+  <img class="w60" src="http://www.reactiongifs.com/wp-content/uploads/2011/11/bill_murray.gif" alt="" />
+  <h2>It's just a little ... misunderstood</h2>
+</section>
+
+<section class="slide" id="js-desc">
+<h2>Javascript - Executive Summary</h2>
+<h3>Well .. OK? .. Lets try this.</h3>
+</section>
+
+<section class="slide" id="brendan-pic">
+<h2>Brendan Eich - The Father of JavaScript</h2>
+<img src="media/b_pirate.jpg" alt="" />
+</section>
+
+<section class="slide" id="js-quote-1">
+  <p></p>
+  <blockquote cite="http://example.org">
+JS had to 'look like Java' only less so, be Java's dumb kid brother or boy-hostage sidekick.
+    <p></p>
+    <p><cite>- Brendan Eich</cite></p>
+  </blockquote>
+</section>
+
+<section class="slide" id="bq-example">
+  <p></p>
+  <blockquote cite="http://example.org">
+￼...plus, I had to be done in ten days or something worse than JS would have happened.<p></p>
+    <p><cite>- Brendan Eich</cite></p>
+  </blockquote>
+</section>
+
+
+<section class="slide" id="">
+<h2>It all started with DHTML</h2>
+  <textarea id="dhtml" name="code" class="code" mode="htmlmixed" theme="elegant" style="display: none;">
+<html>
+  <body>
+    <!-- Remember this? -->
+    <h1 onmouseover="style.color='red'" onmouseout="style.color='black'">
+      Mouseover me! Please!
+    </h1>
+  </body>
+</html>
+  </textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Core Types</h2>
+<ul class="nice bigger float-left">
+  <li>Number</li>
+  <li>String</li>
+  <li>Boolean</li>
+  <li>null</li>
+  <li>undefined</li>
+</ul>
+<ul class="nice bigger float-left">
+  <li>Object (dictionary)
+  <ul>
+    <li>Array</li>
+    <li>Date</li>
+    <li>function</li>
+    <li>RegExp</li>
+  </ul>
+  </li>
+</ul>
+</section>
+
+<section class="slide" id="">
+<h2>lets talk about numbers</h2>
+<textarea id="numbers_explained" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+// Only single number type
+// 64-bit floating point internally
+// All you need to know that a number is a number
+
+var one = 1;
+var two = 2;
+var oneFloat = 1.0;
+var negative = -10;
+
+// Demo. calling .toString() is needed due console limitation
+
+console.log((one === oneFloat).toString());
+
+// you can also do this, but please avoid
+
+var ten = new Number("10");
+console.log(ten);
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Numbers - tips'n'tricks</h2>
+<textarea id="numbers_more" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+// Parsing a string into number
+
+var i = parseInt("450.99", 10); // base 10
+var f = parseFloat("123.78");
+
+console.log("i is " + i);
+console.log("f is " + f);
+
+// parsing error returns NaN (Not a Number)
+
+var pass = parseInt("50 USD", 10);
+var fail = parseInt("$ 50", 10);
+
+console.log(pass);
+console.log(fail);
+
+// Number overflow returns Infinity
+// Numbers have a few methods. Numbers are objects too.
+// For all your other math needs there is the Math object
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Booleans</h2>
+<p>true and false. That's all you need to know for now.</p>
+</section>
+
+<section class="slide" id="">
+<h2>Lets talk about strings</h2>
+<textarea id="strings" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+// Meh ...
+
+var hipster = "I'm hip, yo! My blog domain name ends with .io";
+
+// Preferred when doing dom stuff?
+
+var div = '<div id="ilia" class="hip"><span class="awesome">me</span></div>';
+
+var combine = "I " + "love " + " JavaScript";
+
+var uncool = new String("don't do this. please.");
+
+// Strings have many methods and one property?
+
+var howLong = "javascript".length;
+"hipster".replace("ster", "pie");
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>null + undefined vs. null vs. undefined</h2>
+<p>
+  from Stackoverflow: <br/><br />
+  <em>null</em> is not an object, it is a primitive value. You cannot add properties to it.
+  Sometimes people wrongly assume that it is an object, because typeof null
+  returns "object". But that is actually a bug (that might even be fixed in
+  ECMAScript 6).
+  <p>
+  <em>undefined</em>: used by javascript and means “no value”. Uninitialized variables,
+  missing parameters and unknown variables have that value.
+  </p>
+<textarea id="nulls" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+var a; // undefined
+typeof(a); // 'undefined'
+
+var n = null;
+typeof(n); // 'null'
+
+// What is the output?
+
+console.log((a == n).toString());
+console.log((a === n).toString());
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Equality</h2>
+<h3>falsy</h3>
+false, zero, empty string ,NaN, null, undefined
+<p></p>
+<h3>truthy</h3>
+<p>
+true and everything else
+</p>
+<p>
+<textarea id="eqality" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+var a;
+function display(val) {
+  console.log(new Boolean(val).toString());
+}
+
+display(null);
+display(a);
+display(NaN);
+display("");
+display(0);
+display(-1);
+display([]); // Array literal
+
+var e = 1 ==  "1"; // Equality
+var f = 1 === "1"; // Identity (value and type)
+
+var g = 1 !=  "1";
+var h = 1 !== "1";
+
+// Quiz
+display(null == false);
+display(null === false);
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Control statements and friends</h2>
+<h3>the usual suspects</h3>
+<p>if, else, for, for .. in, while, switch, do .. while, break, continue</p>
+<textarea id="controls" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+// circuit operators
+
+var a;
+var b = a || "foo";
+console.log(b);
+
+function setCoolnessFactor(user) {
+  if (user && user.factor) obj.factor = "high";
+}
+
+var obj = {user: "ilia", password: "drowssap"}; // object literal
+
+setCoolnessFactor(obj);
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Lets talk about arrays</h2>
+<textarea id="arrays" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+// Bad
+
+var arr = new Array();
+arr[0] = 1;
+arr[1] = true;
+
+// Question
+// what is new Array(10) and new Array(1, 2, 3)
+
+// Possible?
+arr[6] = "monkey";
+console.log(arr);
+
+// Good - array literals
+var arr = [1, true];
+
+// Arrays have many useful methods. Go and expore them!
+
+var fruits = ["mango", "watermelon"];
+fruits.push("banana", "apple", "peach");
+console.log(fruits);
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Lets talk about dates</h2>
+<h3>No. Boring. Buggy. Strange. Let's skip.</h3>
+</section>
+
+<section class="slide" id="">
+<h2>Let's talk about regular expressions</h2>
+<h3>fun facts</h3>
+<p>Many of the javascript's features were borrowed from other languages. The
+syntax came from Java, functions came from Scheme, and prototypal inheritance
+came from Self. javascript's regular expression feature was borrowed from
+Perl.
+</p>
+<textarea id="regexp" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+// Bad
+var re = new RegExp("^\d*$", 'g'); // 'g' is for global
+
+// Good
+var re = /^\d*$/g;
+
+// Methods that work with regex are:
+//  regexp.exec, regex.test, string.match,
+//  string.replace, string.search, string.split
+
+// Prefer these over string operations because regex ops are faster
+</textarea>
+
+</section>
+
+<section class="slide" id="">
+<h2>Objects in short</h2>
+<textarea id="objects" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+// Bad
+var me = new Object();
+me.name = "Ilia";
+me.age = 34;
+
+// Good
+var youngerMe = {name: "Ilia", age: 25};
+
+// Objects are dictionaries. Surprise!
+</textarea>
+</section>
+
+<section class="slide center-content" id="">
+<h2>Functions. Finally!</h2>
+<img class="w40" src="http://4.bp.blogspot.com/-GHrSfzMXxIc/Tdpp5iMndPI/AAAAAAAACo4/CS0eZxU7cO8/s400/Borat.jpg" alt="" />
+<h3>
+  Functions in JavaScript are first-class objects meaning you can pass them
+  around and is what makes JavaScript tick. I like!
+</h3>
+</section>
+
+<section class="slide" id="">
+<h2>Function basics</h2>
+<textarea id="func_basics" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+function hello() {
+  return "Hello!";
+}
+console.log(hello());
+
+var holla = function() {
+  return "Holla!";
+};
+console.log(holla());
+
+var sayWhat = holla;
+console.log(sayWhat());
+
+console.log(typeof(holla));
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Function Scope</h2>
+<textarea id="func_scope" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+// Declare all your vars at the
+// beginning of the function
+
+
+function hello() {
+  var a = "Yo!";
+
+  if (true) {
+    var b = "What?";
+  }
+  console.log(a);
+  console.log(b);
+}
+
+// OK or not OK?
+hello();
+
+// What is 'a'?
+var a = "Hej!"
+hello();
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Global and Local</h2>
+<textarea id="func_globals" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+function hello() {
+  isDebug = true;
+  // O-oh! You just created a global var
+  // that is assigned to window.isDebug
+  // Always use var!
+}
+hello();
+
+// How about this?
+var check = true;
+function checkStatus() {
+  var local = check;
+  local = false;
+  console.log(local.toString());
+}
+checkStatus();
+console.log(check.toString());
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Function arguments</h2>
+<textarea id="func_args" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+function createUser(email, password, gender) {
+  return { email: email, password: password, gender: gender};
+}
+
+createUser("john@example.com", "pass", "male");
+
+// And this?
+createUser("john@example.com", "pass", "male", 55);
+
+// How about this?
+createUser();
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Function arguments, cont.</h2>
+<textarea id="func_args_cont" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+function empty() {
+  console.log(arguments);
+}
+
+empty("ilia", 34, "Male");
+empty(["ilia", 34, "Male"]);
+
+var slice = Array.prototype.slice;
+
+function sliceArgs() {
+  var args = slice.call(arguments, 0);
+  console.log(args);
+}
+sliceArgs("ilia", 34, "Male");
+sliceArgs(["ilia", 34, "Male"]);
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Call and apply</h2>
+<h3>Very important! Look up and make sure you understand it.</h3>
+</section>
+
+<section class="slide" id="">
+<h2>Clojures and Curry</h2>
+<textarea id="clojures" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+function clojure() {
+  return function(name) {
+    console.log("Hello, " + name);
+  };
+}
+var hello = clojure();
+hello("Johannes");
+
+function curry() {
+  var greeting = "Hola";
+  return function(name) {
+    console.log(greeting + " , " + name);
+  };
+}
+var greet = curry();
+greet("Ilia");
+
+function customGreeting(greet) {
+  return function(name) {
+    console.log(greet + ", " + name);
+  };
+}
+var brother = customGreeting("What's happening my brother");
+brother("Oscar");
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2 id="test-heading">Functions as arguments</h2>
+<textarea id="func_as_args" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;" globals="$">
+function execHandler(name, func) {
+  func(name);
+}
+
+// Also called anonymous functions
+
+execHandler("ilia", function(name) {
+  console.log("Got '" + name +"' as an argument");
+});
+
+$("#test-heading").click(function(e) {
+  alert("Hello");
+});
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Self-executing functions</h2>
+<textarea id="self_exec" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+(function(){
+  console.log("What just happened?");
+}());
+
+// Another way
+(function(){
+  console.log("I don't think this is correct");
+})();
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Module pattern</h2>
+<textarea id="self_exec" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+var ACME = window.ACME || {};
+
+ACME.header = (function(){
+  var secret = "xxx";
+
+  function privateFunc() {
+    console.log(secret);
+  }
+  return {
+    init: function() {
+      privateFunc();
+    }
+  };
+
+}());
+
+ACME.header.init();
+</textarea>
+</section>
+
+
+<section class="slide" id="">
+<h2>Constructor functions</h2>
+<textarea id="objects" name="code" class="code" mode="javascript" theme="elegant" runnable="true" style="display: none;">
+
+var Human = function (name) {
+  this.name = name;
+};
+
+Human.prototype.get_name = function () {
+  return this.name;
+};
+
+Human.prototype.speak = function (what) {
+  return this.name + ' says ' + what;
+};
+
+var ilia = new Human("Ilia");
+console.log(ilia.name);
+console.log(ilia.speak("Yo!"));
+
+var SuperHero = function (name) {
+  this.name = "SuperHero " + name;
+};
+
+SuperHero.prototype = new Human;
+
+SuperHero.prototype.speak = function (what) {
+  return this.name + " does not speak to mortals.";
+}
+
+
+var ironman = new SuperHero("Ironman");
+console.log(ironman.name);
+console.log(ironman.speak());
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Code style</h2>
+<h3>Semicolons</h3>
+<p>I use but use your own judgement. Read up on it.</p>
+<h3>Curly braces</h3>
+<p>I don't use for one liners</p>
+</section>
+
+<!-- _Coffeescript ============================================ -->
+<section class="slide" id="coffee-heading">
+</section>
+
+<section class="center-content slide" id="javascript-wow-example-2">
+<h2>Functions - We need to go deeper!</h2>
+<img src="media/deeper.gif"/>
+</section>
+
+<section class="slide" id="javascript-wow-example-2">
+  <br/>  <br/>
+
+  <textarea id="code4" name="code" class="code" mode="javascript" theme="elegant" style="display: none;" runnable="true" globals="$">
+function times_five(n){
+  five = 5;
+  return five * n;
+};
+times_five(5); // 25
+five; // 5
+  </textarea>
+</section>
+
+<section class="slide" id="javascript-wow-example-3">
+  <br/>  <br/>
+
+  <textarea id="code4" name="code" class="code" mode="javascript"  theme="elegant" style="display: none;" runnable="true" globals="$">
+abc(); //works
+function abc(){
+}
+abc(); //works
+
+xyz(); //undefined!
+xyz = function(){
+}
+xyz(); //works
+
+   </textarea>
+</section>
+
+<section class="slide" id="javascript-wow-example-4">
+  <br/>  <br/>
+
+  <textarea id="code4" name="code" class="code" mode="javascript"  theme="elegant" style="display: none;" runnable="true" globals="$">
+function abc() {
+  xyz = function(){
+
+  }
+}
+
+console.log(typeof xyz);
+   </textarea>
+</section>
+
+<section class="slide" id="javascript-wow-example-5">
+  <br/>  <br/>
+
+  <textarea id="code4" name="code" class="code" mode="javascript"  theme="elegant" style="display: none;" runnable="true" globals="$">
+xyz = function abc() {
+
+}
+
+console.log(typeof abc);
+  </textarea>
+</section>
+
+<section class="slide" id="javascript-wow-example-5">
+<h2>The right way...</h2>
+    <textarea id="code4" name="code" class="code" mode="javascript"  theme="elegant" style="display: none;" runnable="true" globals="$">
+var abc = function(){
+  xyz(); //undefined!
+
+  var xyz = function() {
+    xyz(); //works
+  }
+
+
+
+  xyz(); //works
+}
+
+xyz() //undefined!
+  </textarea>
+</section>
+
+<section class="slide center-content" id="javascript-approve">
+<h2>Fantastic!</h2>
+<img src="media/approve.gif" class="w40"/>
+</section>
+
+
+<section class="slide" id="coffee-example-1">
+  <h2>Hello Coffeescript!</h2>
+  <!-- Visa:
+      sum = ->
+      sum = (a, b) ->
+      sum = (a, b) -> a + b
+      scopes
+  -->
+
+  <textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
+sum = ->
+  </textarea>
+</section>
+
+<section class="slide center-content" id="coffee-amazing">
+<h2>Mmmmmmm coffee!</h2>
+<img src="media/mmm.gif"/>
+</section>
+
+
+
+<section class="slide" id="javascript-wow-example-equals">
+  <br/>  <br/>
+
+  <textarea id="code4" name="code" class="code" mode="javascript" theme="elegant" style="display: none;" runnable="true" globals="$">
+￼    2 == "2" // true
+    2 === "2" // false
+  </textarea>
+</section>
+
+<section class="slide" id="coffee-example-7">
+<!-- Visa:
+healthy = 200 > cholesterol > 60
+--!>
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
+cholesterol = 127
+
+healthy = cholesterol == 150
+</textarea>
+</section>
+
+
+<section class="slide" id="coffee-example-2">
+<!-- Visa:
+splats...
+  --!>
+<br/><br/>
+  <textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
+
+fill = (container, liquid = "coffee") ->
+  "Filling the #{container} with #{liquid}..."
+
+console.log fill("cup")
+  </textarea>
+</section>
+
+<section class="slide center-content" id="coffee-amazing">
+<h2>Amazing!</h2>
+<img src="media/amazing.gif"/>
+</section>
+
+
+<section class="slide" id="coffee-example-3">
+<br/><br/>
+  <textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
+colors =
+  red: 0xF00
+  blue: 0x00F
+  </textarea>
+</section>
+
+<section class="slide" id="coffee-example-4">
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
+class Monkey
+  constructor: (name) ->
+    @name = name
+  </textarea>
+</section>
+
+<section class="slide" id="coffee-example-5">
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
+theBait   = 1000
+theSwitch = 0
+
+[theBait, theSwitch] = [theSwitch, theBait]
+</textarea>
+</section>
+
+
+<section class="slide" id="coffee-example-8">
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="true">
+list = [1, 2, 3, 4, 5]
+
+cubes = (math.cube num for num in list)
+</textarea>
+</section>
+
+<section class="slide center-content" id="coffee-trust">
+<h2>Ok, how can we trust you?</h2>
+<img src="media/trust.gif" class="w40"/>
+</section>
+
+<section class="slide center-content" id="coffee-trust-why">
+<h1>It's just JavaScript!</h1>
+</section>
+
+
+<section class="slide" id="backbone">
+    <img src="media/backbone.png" style="margin-top: 30%;" alt="" />
+</section>
+
+<section class="slide" id="jagskabara-1">
+<h1>Jag ska bara...</h1>
+</section>
+
+<section class="slide" id="jagskabara-2">
+    <h1>Jag ska bara...</h1>
+    <img src="media/jagskabara2.png" style="position: absolute; left: 70%; top: 20%;" alt="" />
+</section>
+
+<section class="slide" id="jagskabara-3">
+    <h1>Jag ska bara...</h1>
+    <img src="media/jagskabara1.png" style="position: absolute; left: 10%; top: 10%;" alt="" />
+    <img src="media/jagskabara2.png" style="position: absolute; left: 70%; top: 20%;" alt="" />
+</section>
+
+<section class="slide" id="jagskabara-4">
+    <h1>Jag ska bara...</h1>
+    <img src="media/jagskabara1.png" style="position: absolute; left: 10%; top: 10%;" alt="" />
+      <img src="media/jagskabara2.png" style="position: absolute; left: 70%; top: 20%;" alt="" />
+      <img src="media/jagskabara3.png" style="position: absolute; left: 30%; top: 50%;" alt="" />
+</section>
+
+<section class="slide" id="backbone-mvc-1">
+  <h1>MVC</h1>
+</section>
+
+<section class="slide" id="backbone-mvc-2">
+  <h1>MVC</h1>
+  <h3 style="position: absolute; left: 25%; top: 30%;">Backbone.Model</h3>
+  <h3 style="position: absolute; left: 16%; top: 36%;">Backbone.Collection</h3>
+  <h3 style="position: absolute; left: 67%; top: 46%;">Backbone.Router</h3>
+  <h3 style="position: absolute; left: 43%; top: 66%;">Backbone.View</h3>
+  <h3 style="position: absolute; left: 80%; top: 16%;">
+    Underscore.js <br/>
+    (jQuery)
+  </h3>
+</section>
+
+
+<section class="slide" id="underscore-example-1">
+<h2>Underscore.js</h2>
+<textarea id="code5" name="code" class="code" mode="coffeescript"
+  theme="elegant" style="display: none;" runnable="true"
+  globals="_">
+
+_([1, 2, 3]).map (n) -> n * 2
+
+stooges = [
+  {name :'moe', age :40}
+  {name :'larry', age: 50}
+  {name : 'curly', age : 60}
+]
+_(stooges).pluck 'name'
+</textarea>
+</section>
+
+
+<section class="slide" id="backbone-example-1">
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="false">
+Book = Backbone.Model.extend
+  initialize: ->
+
+book = new Book title: "Processen", author: "Franz Kafka", year: 1925;
+</textarea>
+</section>
+
+<section class="slide" id="backbone-example-2">
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript"
+  theme="elegant" style="display: none;" runnable="false" globals="$,_,Backbone">
+Book = Backbone.Model.extend {}
+
+Library = Backbone.Collection.extend
+  model: Book
+  url: '/books'
+  comparator: (book)->
+    book.get 'year'
+
+# books = Library.fetch()
+
+# or
+
+books = new Library [
+  {title: "Max kaka", year: 1988}
+  {title: "Max fallskärm", year: 1989}
+  {title: "Max balja", year: 1987}
+]
+
+</textarea>
+</section>
+
+<section class="slide" id="backbone-example-3">
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="false">
+Workspace = Backbone.Router.extend
+  routes:
+    "help":                 "help"    # #help
+    "search/:query":        "search"  # #search/kiwis
+    "search/:query/p:page": "search"  # #search/kiwis/p7
+
+  help: ->
+    #...
+
+  search: (query, page) ->
+    #...
+</textarea>
+</section>
+
+
+<section class="slide" id="backbone-example-10">
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript"
+  theme="elegant" style="display: none;" runnable="false"
+  globals="$,_,Backbone">
+Item = Backbone.Model.extend {}
+
+ItemView = Backbone.View.extend
+  tagName:  "li"
+  template: _("#<%= no %> <%= name %>").template()
+
+  render: ->
+    content = @template(@model.attributes)
+    $(@el).html content
+    this
+
+
+view = new ItemView(model: new Item(no:1, name: "test"))
+
+view.render().el # => <li>#1 test</li>
+
+</textarea>
+</section>
+
+
+<section class="slide" id="backbone-example-12">
+<br/><br/>
+<textarea id="code5" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="false">
+AlertView = Backbone.View.extend
+  events: "click .button": "showAlert"
+
+  showAlert: -> alert "hello"
+</textarea>
+</section>
+
+<!-- _Backbone.js ============================================== -->
+<!-- _Spine.js    ============================================== -->
+
+<section class="slide" id="spine-heading">
+  <h2>spine.js</h2>
+</section>
+
+<section class="slide center-content">
+  <h1>Latest Project</h1>
+</section>
+
+<section class="slide center-content">
+<h2>Before Spine.js and Coffeescript</h2>
+<img class="w50"
+src="http://www.reactiongifs.com/wp-content/uploads/2011/09/illK6U.gif" alt="" />
+</section>
+
+<section class="slide center-content">
+<h2>I sneaked in <br />Spine.js and Coffeescript</h2>
+<img class="w50"
+src="http://www.reactiongifs.com/wp-content/gallery/dance-party/glowsticking.gif" alt="" />
+</section>
+
+<section class="slide center-content">
+<h2>Aftermath</h2>
+<div style="text-align: center;">
+<img style="display:inline-block; height: 30%; margin-right: 5%"
+src="http://www.reactiongifs.com/wp-content/uploads/2011/05/dwayne-the-rock-johnson_likes_it.gif" alt="" />
+<img style="display: inline-block; height: 30%"
+src="http://www.reactiongifs.com/wp-content/gallery/yes/rahr_yes.gif" alt="" />
+</div>
+</section>
+
+<section class="slide" id="">
+<h2>Spine.js - Executive summary</h2>
+<ul class="nice">
+  <li>Created by Alex MacCaw (@maccman) while writing JavaScript Web
+  Applications book</li>
+  <li>(Re)written in CoffeeScript.</li>
+  <li>Lightweight. Simple. 500 LOC. ~ 2K minified and gzipped</li>
+  <li>Inspired by Backbone.js. Also borrowed a few features from it</li>
+  <li>There is also Spine.mobile.js</li>
+  <li>For best experience you need to include <em>jQuery</em></li>
+  <li>Has many plugins</li>
+  <li>JS compatible?</li>
+  <li>No views. Only controllers and models ... and classes</li>
+</ul>
+</section>
+
+
+<section class="slide" id="backbone-example-10">
+<h2>Spine. Page setup.</h2>
+<textarea id="spine-contr" name="code" class="code" mode="htmlmixed" theme="elegant" style="display: none;" runnable="false">
+<html>
+<body>
+  ....
+  <nav id="menu">
+    <ul>
+      <li class="subsections">
+      <ul>Sub Menu
+          <li>First</li>
+          ...
+        </ul>
+      </li>
+    </ul>
+    <input type="text" id="#name" />
+    </nav>
+  ....
+  <script src="js/jquery.js"></script>
+  <script src="js/spine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Spine Controllers. The glue.</h2>
+<textarea id="spine-contr" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="false">
+# app.js
+
+class MenuController extends Spine.Controller
+  elements:
+    "li.subsections" : "subsections"
+    "#name" : "message"
+    ...
+  events:
+    "a.item click" : "clickLink"
+    "#message focus": "enterMessageField"
+    ...
+  constructor: ->
+    super
+    @default = "No name"
+
+  clickLink: (e) ->
+    target = $(e.target)
+    target.text('Clicked!')
+    e.preventDefault()
+
+  enterMessageField: (e) =>
+    field = $(e.target)
+    field.val(@default)
+
+$ ->
+  new MenuController el: "#menu"
+</textarea>
+</section>
+
+<section class="slide" id="">
+<h2>Spine Models</h2>
+<textarea id="spine-models" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;" runnable="false">
+class User extends Spine.Model
+  @configure "User", "first_name", "last_name"
+
+  fullName: -> [@first_name, @last_name].join(' ')
+
+user = new User(first_name: "Ivan", last_name: "Drago")
+user.save()
+
+users = User.all()
+
+class UserController extends Spine.Controller
+  elements:
+    ...
+  events:
+    ...
+  constructor: ->
+    super
+    User.bind("destroy", @userDestroyed)
+
+  userDestroyed: (user) =>
+    # Do something here ...
+
+</textarea>
+</section>
+<section class="slide" id="spine-events">
+<h2>Spine. Cross controller communication.</h2>
+<textarea id="spine-events" name="code" class="code" mode="coffeescript" theme="elegant" style="display: none;">
+class MenuController extends Spine.Controller
+  elements:
+    ...
+  events:
+    ...
+  constructor: ->
+    super
+    Spine.bind("ns:stateChanged", @stateChanged)
+
+  stateChanged: (state) =>
+    # got state
+    @process state
+
+  process: (state) ->
+    # do something nice
+
+class ItemController extends Spine.Controller
+  ...
+  constructor: ->
+    super
+
+  clicked: (e) ->
+    Spine.trigger("ns:stateChanged", {id: 1, status: false})
+</textarea>
+</section>
+
+<section class="slide center-content">
+<h2>Tnx!</h2>
+<img class="w60" src="http://www.reactiongifs.com/wp-content/uploads/2011/08/conana_approves87ab20690092.gif" alt="" />
+</section>
+
+<section class="slide" id="credits">
+  <h2>Photo credits</h2>
+  <ul class="nice">
+    <li>Animated gifs from reactiongifs.com</li>
+    <li>Clown - http://www.flickr.com/photos/cogdog/6129164570/</li>
+    <li>Coffee - http://www.flickr.com/photos/doug88888/3765136858/</li>
+    <li>Pirate - http://www.flickr.com/photos/jsconf/4587502948/</li>
+    <li>Centepede - http://www.flickr.com/photos/crydin/367572931/</li>
+  </ul>
+</section>
+
+<p class="deck-status">
+    <span class="deck-status-current"></span>
+    /
+    <span class="deck-status-total"></span>
+</p>
+
+<form action="." method="get" class="goto-form">
+    <label for="goto-slide">Go to slide:</label>
+    <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+    <datalist id="goto-datalist"></datalist>
+    <input type="submit" value="Go">
+</form>
+
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+  <!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../jquery-1.7.min.js"><\/script>')</script>
+
+<!-- Deck Core and extensions -->
+<script src="deck.js/core/deck.core.js"></script>
+<script src="deck.js/extensions/hash/deck.hash.js"></script>
+<script src="deck.js/extensions/menu/deck.menu.js"></script>
+<script src="deck.js/extensions/goto/deck.goto.js"></script>
+<script src="deck.js/extensions/status/deck.status.js"></script>
+
+<script src="deck.js/extensions/codemirror/codemirror.js"></script>
+<script src="deck.js/extensions/codemirror/mode/javascript/javascript.js"></script>
+<script src="deck.js/extensions/codemirror/mode/coffeescript/coffeescript.js"></script>
+<!-- required for html highlighting -->
+
+<script src="deck.js/extensions/codemirror/mode/xml/xml.js"></script>
+<script src="deck.js/extensions/codemirror/mode/css/css.js"></script>
+<script src="deck.js/extensions/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+<script src="deck.js/extensions/codemirror/deck.codemirror.js"></script>
+
+<script src="coffee-script.js"></script>
+<script src="presentation.js"></script>
+
+<!-- Specific to this page -->
+
+</body>
+</html>
+
