@@ -36,6 +36,11 @@ img.w80 { min-width: 80%;}
 #spine-heading {
   background: url(media/centipede.jpg) no-repeat no-repeat;
 }
+
+#coffee-heading {
+  background: url(media/coffee.jpg) no-repeat no-repeat top center;
+}
+
 #javascript-heading h2, #spine-heading h2 {
   position: absolute;
   top: 10%;
