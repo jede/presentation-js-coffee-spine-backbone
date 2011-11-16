@@ -1029,10 +1029,9 @@ ItemView = Backbone.View.extend
   template: _("#<%= no %> <%= name %>").template()
 
   render: ->
-    content = @template(@model.attributes)
+    content = @template(@model.toJSON())
     $(@el).html content
     this
-
 
 view = new ItemView(model: new Item(no:1, name: "test"))
 
