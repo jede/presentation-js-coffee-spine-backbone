@@ -163,7 +163,7 @@
 </section>
 
 <section class="slide" id="brendan-pic">
-<h2>Bendan Eich - The Father of JavaScript</h2>
+<h2>Brendan Eich - The Father of JavaScript</h2>
 <img src="media/b_pirate.jpg" alt="" />
 </section>
 
@@ -1134,12 +1134,12 @@ src="http://www.reactiongifs.com/wp-content/gallery/yes/rahr_yes.gif" alt="" />
 
 class MenuController extends Spine.Controller
   elements:
-    "li.subsections" : "subsections",
-    "#name" : "message",
+    "li.subsections" : "subsections"
+    "#name" : "message"
     ...
   events:
     "a.item click" : "clickLink"
-    "#message focus": "enterMessageField",
+    "#message focus": "enterMessageField"
     ...
   constructor: ->
     super
@@ -1170,7 +1170,7 @@ class User extends Spine.Model
 user = new User(first_name: "Ivan", last_name: "Drago")
 user.save()
 
-users = Users.all()
+users = User.all()
 
 class UserController extends Spine.Controller
   elements:
@@ -1215,44 +1215,11 @@ class ItemController extends Spine.Controller
 </textarea>
 </section>
 
-<!--
+<section class="slide center-content">
+<h2>Tnx!</h2>
+<img class="w60" src="http://www.reactiongifs.com/wp-content/uploads/2011/08/conana_approves87ab20690092.gif" alt="" />
+</section>
 
-Latest project - JS + Coffee + Spine.js
-Me + two co-workers
-- Före
-  Jag smög in i projektet http://www.reactiongifs.com/wp-content/gallery/dance-party/glowsticking.gif
-  dum dummare  http://www.reactiongifs.com/wp-content/uploads/2011/09/illK6U.gif
-  glasses - http://www.reactiongifs.com/wp-content/uploads/2011/05/bubbles2.gif
-
-  Efter - the rock + m"stacshe
-  http://www.reactiongifs.com/wp-content/uploads/2011/05/dwayne-the-rock-johnson_likes_it.gif
-  http://www.reactiongifs.com/wp-content/gallery/dance-party/lebowski_dance.gif
-  http://www.reactiongifs.com/wp-content/gallery/yes/rahr_yes.gif
-
-- Clientside templating choose one:
-  - underscore
-  - Jquery
-  - mustasche.js
-  - handlebars.js
-  - ejs
--->
-<!-- _Summary     ============================================== -->
-<!--
-  Book and website tips
-  Console is your friend
-- KISS principen (bild på Kiss)
-  http://www.flickr.com/photos/aresauburnphotos/4123108117/
-- Learn JS basics first before jumping head first into Coffee (fail pic)
-- Try out spine or backbone
-  Crawling baby pic?
-- Stay disciplined
-  Russian army pic
--Hard to write "correct" javascript. Takes a lot of effort and experience.
-- Don't give up!
-  Runner pic?
-
-Tnx. Conan obrien applauds pic
--->
 <section class="slide" id="credits">
   <h2>Photo credits</h2>
   <ul class="nice">
